@@ -11,12 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'prop-types': path.resolve(__dirname, './src/prop-types-shim.js'),
     },
-  },
-  optimizeDeps: {
-    include: ['prop-types', 'react-simple-maps'],
-  },
-  ssr: {
-    noExternal: ['react-simple-maps', 'prop-types'],
   },
 })
