@@ -14,6 +14,9 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['prop-types'],
+    include: ['prop-types', 'react-simple-maps'],
+  },
+  ssr: {
+    noExternal: ['react-simple-maps', 'prop-types'],
   },
 })
