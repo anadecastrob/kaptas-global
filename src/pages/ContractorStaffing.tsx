@@ -1,3 +1,5 @@
+import { SEO } from "../components/SEO";
+import { organizationSchema, outsourcingFaqSchema, outsourcingServiceSchema } from "../data/seoSchemas";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Search, Users, Globe, FileText, Zap, DollarSign, Target, Filter, Code2, Plus, Minus } from "lucide-react";
@@ -75,6 +77,13 @@ export default function ContractorStaffing() {
 
   return (
     <div className="flex flex-col gap-32 pb-24">
+      <SEO
+        title="Outsourcing & Staffing in Brazil and Latin America | Hire Remote Talent | Kaptas Global"
+        description="Kaptas Global helps US companies hire senior remote professionals in Brazil and Latin America. We handle sourcing, payroll, and compliance. Zero upfront cost. 14-day average time to hire. Full IP ownership. One monthly invoice in USD."
+        keywords="outsourcing staffing Brazil, hire remote talent Latin America, nearshore hiring Brazil, contractor payroll Brazil, hire engineers Brazil, Kaptas Global, nearshore staffing, remote professionals Latin America, IP ownership contractor Brazil"
+        canonical="https://kaptasglobal.io/contractor-staffing"
+        schemas={[outsourcingFaqSchema, organizationSchema, outsourcingServiceSchema]}
+      />
       {/* 1. Hero with Image */}
       <motion.section 
         initial={{ opacity: 0 }}

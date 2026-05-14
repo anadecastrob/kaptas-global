@@ -1,3 +1,5 @@
+import { SEO } from "../components/SEO";
+import { organizationSchema, directHireFaqSchema, directHireServiceSchema } from "../data/seoSchemas";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Search, Users, Globe, FileText, Zap, DollarSign, Target, Filter, Code2, Plus, Minus } from "lucide-react";
@@ -75,8 +77,15 @@ export default function DirectHire() {
 
   return (
     <div className="flex flex-col gap-32 pb-24">
+      <SEO
+        title="Direct Hire in Brazil — Kaptas Global | One-Time 18% Fee, No Retainer"
+        description="Hire Brazilian professionals directly on your team. Pre-vetted shortlist in 5 days. 18% one-time fee, paid after hire. Replacement warranty included."
+        keywords="direct hire brazil, hire developers brazil, one-time recruitment fee brazil, hire brazilian engineers, direct placement brazil, tech talent brazil, 18% hiring fee, pre-vetted developers brazil, replacement guarantee hiring, remote developers brazil"
+        canonical="https://kaptasglobal.io/direct-hire"
+        schemas={[directHireFaqSchema, organizationSchema, directHireServiceSchema]}
+      />
       {/* 1. Hero with Image */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

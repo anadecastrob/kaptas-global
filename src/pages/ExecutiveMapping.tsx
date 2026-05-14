@@ -1,3 +1,5 @@
+import { SEO } from "../components/SEO";
+import { organizationSchema, executiveMappingFaqSchema, executiveMappingServiceSchema } from "../data/seoSchemas";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Search, Users, Globe, FileText, Zap, DollarSign, Target, Filter, Code2, Plus, Minus } from "lucide-react";
@@ -66,8 +68,15 @@ export default function ExecutiveMapping() {
 
   return (
     <div className="flex flex-col gap-32 pb-24">
+      <SEO
+        title="Executive Mapping in Brazil and Latin America | Talent Intelligence | Kaptas Global"
+        description="Kaptas Global maps 20-30 leadership professionals for your target role in Brazil and Latin America. Competitor compensation analysis, team structures, salary benchmarks, and a ranked shortlist of top candidates. Delivered in 10-15 business days."
+        keywords="executive mapping Brazil, executive talent mapping Latin America, leadership hiring Brazil, competitor compensation analysis Brazil, C-level salary benchmarks Brazil, talent intelligence Brazil, hire country manager Brazil, executive search Brazil, Kaptas Global, talent mapping Latin America"
+        canonical="https://kaptasglobal.io/executive-mapping"
+        schemas={[executiveMappingFaqSchema, organizationSchema, executiveMappingServiceSchema]}
+      />
       {/* 1. Hero with Image */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
