@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { SEO } from "../components/SEO";
 import { organizationSchema } from "../data/seoSchemas";
 import blogPosts from "../data/blog-posts.json";
+import { useContactForm } from "../hooks/useContactForm";
+import { ThankYouModal } from "../components/ThankYouModal";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -38,8 +40,11 @@ export default function Blog() {
   const posts = [...blogPosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+  const { form: nlForm, handleChange: handleNlChange, handleSubmit: handleNlSubmit, isSubmitting: nlSubmitting, showModal: nlModal, setShowModal: setNlModal, error: nlError } = useContactForm("Blog — Newsletter");
 
   return (
+    <>
+    <ThankYouModal isOpen={nlModal} onClose={() => setNlModal(false)} />
     <div className="flex flex-col gap-32 pb-24">
       <SEO
         title="Blog — Kaptas Global | Insights on Hiring in Brazil & Latin America"
@@ -146,21 +151,26 @@ export default function Blog() {
             </p>
           </div>
           <div className="relative z-10 w-full md:w-auto flex-1 max-w-md">
-            <form className="flex flex-col sm:flex-row gap-3">
+            <form className="flex flex-col sm:flex-row gap-3" onSubmit={handleNlSubmit}>
               <input
                 type="email"
+                name="email"
+                value={nlForm.email}
+                onChange={handleNlChange}
                 placeholder="Enter your email"
                 className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-kaptas-green focus:bg-white/10 transition-all flex-1"
                 required
               />
-              <button type="submit" className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap">
-                Subscribe
+              <button type="submit" disabled={nlSubmitting} className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed">
+                {nlSubmitting ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
+            {nlError && <p className="text-red-400 text-xs mt-2">{nlError}</p>}
             <p className="text-xs text-gray-500 mt-4 font-mono">We respect your privacy. Unsubscribe at any time.</p>
           </div>
         </div>
       </motion.section>
     </div>
+    </>
   );
 }

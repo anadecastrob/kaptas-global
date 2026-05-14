@@ -1,22 +1,30 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { fadeIn } from "./animations";
+import { useContactForm } from "../../hooks/useContactForm";
+import { ThankYouModal } from "../ThankYouModal";
 
 // Componente de formulário de geração de leads
-export function LeadGenerationForm({ 
-  headline, 
+export function LeadGenerationForm({
+  headline,
   subtext,
   steps,
   trustSignals,
-  ctaText
-}: { 
-  headline?: React.ReactNode, 
+  ctaText,
+  source
+}: {
+  headline?: React.ReactNode,
   subtext?: React.ReactNode,
   steps?: { number: string | number, title: React.ReactNode, desc: React.ReactNode }[],
   trustSignals?: React.ReactNode[],
-  ctaText?: string
+  ctaText?: string,
+  source?: string;
 }) {
+  const { form, handleChange, handleSubmit, isSubmitting, showModal, setShowModal, error } = useContactForm(source || "Home");
+
   return (
+    <>
+    <ThankYouModal isOpen={showModal} onClose={() => setShowModal(false)} />
     <div className="w-full bg-[#F9FAFB] pt-[80px] h-[680px] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-kaptas-green/5 via-transparent to-transparent pointer-events-none"></div>
@@ -98,54 +106,29 @@ export function LeadGenerationForm({
               
               {/* Inner Form Container */}
               <div className="bg-white rounded-[23px] p-8 md:p-10 relative z-10 h-full w-full">
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all"
-                    placeholder="John Doe"
-                  />
+                  <label htmlFor="lg-name" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Name</label>
+                  <input type="text" id="lg-name" name="name" value={form.name} onChange={handleChange} required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all" placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="company" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Company Name</label>
-                  <input 
-                    type="text" 
-                    id="company" 
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all"
-                    placeholder="Acme Corp"
-                  />
+                  <label htmlFor="lg-company" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Company Name</label>
+                  <input type="text" id="lg-company" name="company" value={form.company} onChange={handleChange} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all" placeholder="Acme Corp" />
                 </div>
               </div>
-              
               <div className="space-y-2">
-                <label htmlFor="email" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Work Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all"
-                  placeholder="john@acmecorp.com"
-                />
+                <label htmlFor="lg-email" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Work Email</label>
+                <input type="email" id="lg-email" name="email" value={form.email} onChange={handleChange} required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all" placeholder="john@acmecorp.com" />
               </div>
-
               <div className="space-y-2">
-                <label htmlFor="comment" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">How can we help?</label>
-                <textarea 
-                  id="comment" 
-                  rows={4}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all resize-none"
-                  placeholder="Tell us about your hiring needs, timeline, or any specific challenges..."
-                ></textarea>
+                <label htmlFor="lg-message" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">How can we help?</label>
+                <textarea id="lg-message" name="message" value={form.message} onChange={handleChange} rows={4} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-kaptas-green/20 focus:border-kaptas-green transition-all resize-none" placeholder="Tell us about your hiring needs, timeline, or any specific challenges..." />
               </div>
-
-              <button 
-                type="submit" 
-                className="w-full bg-[#111111] text-white font-semibold rounded-xl px-6 py-4 hover:bg-gray-900 transition-colors flex items-center justify-center gap-2 group"
-              >
-                {ctaText || "Start for free"}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+              <button type="submit" disabled={isSubmitting} className="w-full bg-[#111111] text-white font-semibold rounded-xl px-6 py-4 hover:bg-gray-900 transition-colors flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed">
+                {isSubmitting ? "Sending..." : (ctaText || "Start for free")}
+                {!isSubmitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
               </button>
             </form>
               </div>
@@ -154,5 +137,6 @@ export function LeadGenerationForm({
         </div>
       </motion.section>
     </div>
+    </>
   );
 }

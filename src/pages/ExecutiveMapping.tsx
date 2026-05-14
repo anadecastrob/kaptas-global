@@ -1,6 +1,8 @@
 import { SEO } from "../components/SEO";
 import { organizationSchema, executiveMappingFaqSchema, executiveMappingServiceSchema } from "../data/seoSchemas";
 import { useState } from "react";
+import { useContactForm } from "../hooks/useContactForm";
+import { ThankYouModal } from "../components/ThankYouModal";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Search, Users, Globe, FileText, Zap, DollarSign, Target, Filter, Code2, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -30,6 +32,7 @@ const staggerItem = {
 
 export default function ExecutiveMapping() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const { form: heroForm, handleChange: handleHeroChange, handleSubmit: handleHeroSubmit, isSubmitting: heroSubmitting, showModal: heroModal, setShowModal: setHeroModal, error: heroError } = useContactForm("Executive Mapping — Hero");
 
   const faqs = [
     { 
@@ -67,6 +70,8 @@ export default function ExecutiveMapping() {
   ];
 
   return (
+    <>
+    <ThankYouModal isOpen={heroModal} onClose={() => setHeroModal(false)} />
     <div className="flex flex-col gap-32 pb-24">
       <SEO
         title="Executive Mapping in Brazil and Latin America | Talent Intelligence | Kaptas Global"
@@ -173,33 +178,44 @@ export default function ExecutiveMapping() {
                   <div className="mb-6 text-center">
                     <h3 className="text-2xl font-bold text-white -mt-[5px]">Get your market intel</h3>
                   </div>
-                  <form className="space-y-4 mt-1" onSubmit={(e) => e.preventDefault()}>
+                  <form className="space-y-4 mt-1" onSubmit={handleHeroSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="hero-name" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mt-0 mb-[6px]">Name</label>
-                        <input 
-                          type="text" 
-                          id="hero-name" 
+                        <input
+                          type="text"
+                          id="hero-name"
+                          name="name"
+                          value={heroForm.name}
+                          onChange={handleHeroChange}
+                          required
                           className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-kaptas-green focus:border-kaptas-green transition-all placeholder:text-gray-400 mt-1"
                           placeholder="John Doe"
                         />
                       </div>
                       <div>
                         <label htmlFor="hero-company" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mt-0 mb-[6px]">Company Name</label>
-                        <input 
-                          type="text" 
-                          id="hero-company" 
+                        <input
+                          type="text"
+                          id="hero-company"
+                          name="company"
+                          value={heroForm.company}
+                          onChange={handleHeroChange}
                           className="w-full bg-white/10 border border-white/20 rounded-lg pr-4 pl-[17px] py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-kaptas-green focus:border-kaptas-green transition-all placeholder:text-gray-400 mt-1"
                           placeholder="Acme Corp"
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label htmlFor="hero-email" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mt-0 mb-[6px]">Work Email</label>
-                      <input 
-                        type="email" 
-                        id="hero-email" 
+                      <input
+                        type="email"
+                        id="hero-email"
+                        name="email"
+                        value={heroForm.email}
+                        onChange={handleHeroChange}
+                        required
                         className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-kaptas-green focus:border-kaptas-green transition-all placeholder:text-gray-400 mt-1"
                         placeholder="john@acmecorp.com"
                       />
@@ -207,20 +223,25 @@ export default function ExecutiveMapping() {
 
                     <div>
                       <label htmlFor="hero-comment" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mt-0 mb-[6px]">How can we help?</label>
-                      <textarea 
-                        id="hero-comment" 
+                      <textarea
+                        id="hero-comment"
+                        name="message"
+                        value={heroForm.message}
+                        onChange={handleHeroChange}
                         rows={3}
                         className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-1 focus:ring-kaptas-green focus:border-kaptas-green transition-all resize-none placeholder:text-gray-400 mt-1"
                         placeholder="Tell us about your hiring needs..."
                       ></textarea>
                     </div>
 
-                    <button 
-                      type="submit" 
-                      className="w-full bg-kaptas-green text-[#111111] font-semibold text-sm rounded-lg px-6 py-3.5 hover:bg-[#00994A] transition-all flex items-center justify-center gap-2 group mt-[25px] shadow-[0_0_20px_rgba(0,179,86,0.15)] hover:shadow-[0_0_25px_rgba(0,179,86,0.3)]"
+                    {heroError && <p className="text-red-400 text-sm">{heroError}</p>}
+                    <button
+                      type="submit"
+                      disabled={heroSubmitting}
+                      className="w-full bg-kaptas-green text-[#111111] font-semibold text-sm rounded-lg px-6 py-3.5 hover:bg-[#00994A] transition-all flex items-center justify-center gap-2 group mt-[25px] shadow-[0_0_20px_rgba(0,179,86,0.15)] hover:shadow-[0_0_25px_rgba(0,179,86,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Book a call
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      {heroSubmitting ? "Sending..." : "Book a call"}
+                      {!heroSubmitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                     </button>
                   </form>
                 </div>
@@ -592,7 +613,8 @@ export default function ExecutiveMapping() {
       {/* 9. Form */}
       <div id="lead-form" className="w-full flex flex-col">
         <div className="h-4 bg-gradient-to-b from-[#111111] to-[#F9FAFB] w-full relative z-10"></div>
-        <LeadGenerationForm 
+        <LeadGenerationForm
+          source="Executive Mapping — Bottom"
           headline={<>Know the market, <br /><span className="font-semibold text-[#111111]">find the right leader</span></>}
           subtext="Describe the role and we'll map the market for you."
           steps={[
@@ -659,5 +681,6 @@ export default function ExecutiveMapping() {
         </div>
       </motion.section>
     </div>
+    </>
   );
 }
