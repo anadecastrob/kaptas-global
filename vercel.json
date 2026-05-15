@@ -1,195 +1,80 @@
 {
   "redirects": [
-    {
-      "source": "/blog/:slug/",
-      "destination": "/blog/:slug",
-      "permanent": true
-    },
-    {
-      "source": "/blog/",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/direct-hire-services",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/direct-hire-services/",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/contractor-services",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/contractor-services/",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/build-a-nearshoring-squad",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/build-a-nearshoring-squad/",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/dedicated-tech-recruiter-bpo",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/dedicated-tech-recruiter-bpo/",
-      "destination": "/contractor-staffing",
-      "permanent": true
-    },
-    {
-      "source": "/mapping-service",
-      "destination": "/executive-mapping",
-      "permanent": true
-    },
-    {
-      "source": "/mapping-service/",
-      "destination": "/executive-mapping",
-      "permanent": true
-    },
-    {
-      "source": "/global-executive-search",
-      "destination": "/executive-mapping",
-      "permanent": true
-    },
-    {
-      "source": "/global-executive-search/",
-      "destination": "/executive-mapping",
-      "permanent": true
-    },
-    {
-      "source": "/hire-brazilians-with-u-s-or-canada-work-visas",
-      "destination": "/start-operation",
-      "permanent": true
-    },
-    {
-      "source": "/hire-brazilians-with-u-s-or-canada-work-visas/",
-      "destination": "/start-operation",
-      "permanent": true
-    },
-    {
-      "source": "/senior-full-stack-developer",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/senior-full-stack-developer/",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/python-developer",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/python-developer/",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/engineer-manager-criptos",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/engineer-manager-criptos/",
-      "destination": "/direct-hire",
-      "permanent": true
-    },
-    {
-      "source": "/careers-opportunities",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/careers-opportunities/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/sign-up",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/sign-up/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/kaptas-global",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/kaptas-global/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/loginsalesforce",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/loginsalesforce/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/calculator",
-      "destination": "/pricing",
-      "permanent": true
-    },
-    {
-      "source": "/calculator/",
-      "destination": "/pricing",
-      "permanent": true
-    },
-    {
-      "source": "/opt-out-preferences",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/opt-out-preferences/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/terms-of-service",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/terms-of-service/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/privacy-policy",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/privacy-policy/",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/blog/", "destination": "/blog", "permanent": true },
+
+    { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true },
+
+    { "source": "/blog/category/:path*", "destination": "/blog", "permanent": true },
+
+    { "source": "/blog/author/:path*", "destination": "/blog", "permanent": true },
+
+    { "source": "/blog/2024/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/2025/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/2026/:path*", "destination": "/blog", "permanent": true },
+
+    { "source": "/direct-hire-services", "destination": "/direct-hire", "permanent": true },
+    { "source": "/direct-hire-services/", "destination": "/direct-hire", "permanent": true },
+
+    { "source": "/contractor-services", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/contractor-services/", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/build-a-nearshoring-squad", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/build-a-nearshoring-squad/", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/dedicated-tech-recruiter-bpo", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/dedicated-tech-recruiter-bpo/", "destination": "/contractor-staffing", "permanent": true },
+
+    { "source": "/frontend/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/backend/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/mobile/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/data/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/devops/:path*", "destination": "/contractor-staffing", "permanent": true },
+
+    { "source": "/mapping-service", "destination": "/executive-mapping", "permanent": true },
+    { "source": "/mapping-service/", "destination": "/executive-mapping", "permanent": true },
+    { "source": "/global-executive-search", "destination": "/executive-mapping", "permanent": true },
+    { "source": "/global-executive-search/", "destination": "/executive-mapping", "permanent": true },
+
+    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas", "destination": "/start-operation", "permanent": true },
+    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas/", "destination": "/start-operation", "permanent": true },
+
+    { "source": "/senior-full-stack-developer", "destination": "/direct-hire", "permanent": true },
+    { "source": "/senior-full-stack-developer/", "destination": "/direct-hire", "permanent": true },
+    { "source": "/python-developer", "destination": "/direct-hire", "permanent": true },
+    { "source": "/python-developer/", "destination": "/direct-hire", "permanent": true },
+    { "source": "/mlops-engineer", "destination": "/direct-hire", "permanent": true },
+    { "source": "/mlops-engineer/", "destination": "/direct-hire", "permanent": true },
+    { "source": "/engineer-manager-criptos", "destination": "/direct-hire", "permanent": true },
+    { "source": "/engineer-manager-criptos/", "destination": "/direct-hire", "permanent": true },
+    { "source": "/engenheiro-de-machine-learning-senior", "destination": "/direct-hire", "permanent": true },
+    { "source": "/engenheiro-de-machine-learning-senior/", "destination": "/direct-hire", "permanent": true },
+    { "source": "/senior-product-manager-payments", "destination": "/direct-hire", "permanent": true },
+    { "source": "/senior-product-manager-payments/", "destination": "/direct-hire", "permanent": true },
+
+    { "source": "/ebook", "destination": "/", "permanent": true },
+    { "source": "/ebook/", "destination": "/", "permanent": true },
+
+    { "source": "/careers", "destination": "/", "permanent": true },
+    { "source": "/careers/", "destination": "/", "permanent": true },
+    { "source": "/careers-opportunities", "destination": "/", "permanent": true },
+    { "source": "/careers-opportunities/", "destination": "/", "permanent": true },
+
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/home/", "destination": "/", "permanent": true },
+
+    { "source": "/sign-up", "destination": "/", "permanent": true },
+    { "source": "/sign-up/", "destination": "/", "permanent": true },
+    { "source": "/kaptas-global", "destination": "/", "permanent": true },
+    { "source": "/kaptas-global/", "destination": "/", "permanent": true },
+    { "source": "/loginsalesforce", "destination": "/", "permanent": true },
+    { "source": "/loginsalesforce/", "destination": "/", "permanent": true },
+    { "source": "/opt-out-preferences", "destination": "/", "permanent": true },
+    { "source": "/opt-out-preferences/", "destination": "/", "permanent": true },
+    { "source": "/terms-of-service", "destination": "/", "permanent": true },
+    { "source": "/terms-of-service/", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy/", "destination": "/", "permanent": true },
+
+    { "source": "/calculator", "destination": "/pricing", "permanent": true },
+    { "source": "/calculator/", "destination": "/pricing", "permanent": true }
   ],
   "headers": [
     {
