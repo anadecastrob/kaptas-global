@@ -23,6 +23,8 @@ const staticPages = [
   { url: "/contractor-staffing", priority: "0.9", changefreq: "monthly" },
   { url: "/executive-mapping",   priority: "0.9", changefreq: "monthly" },
   { url: "/start-operation",     priority: "0.9", changefreq: "monthly" },
+  { url: "/privacy-policy",      priority: "0.3", changefreq: "yearly"  },
+  { url: "/terms-of-service",    priority: "0.3", changefreq: "yearly"  },
 ];
 
 const posts = JSON.parse(fs.readFileSync(POSTS_FILE, "utf-8"));

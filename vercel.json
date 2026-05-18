@@ -68,13 +68,22 @@
     { "source": "/loginsalesforce/", "destination": "/", "permanent": true },
     { "source": "/opt-out-preferences", "destination": "/", "permanent": true },
     { "source": "/opt-out-preferences/", "destination": "/", "permanent": true },
-    { "source": "/terms-of-service", "destination": "/", "permanent": true },
-    { "source": "/terms-of-service/", "destination": "/", "permanent": true },
-    { "source": "/privacy-policy", "destination": "/", "permanent": true },
-    { "source": "/privacy-policy/", "destination": "/", "permanent": true },
+
+    { "source": "/landing-page", "destination": "/", "permanent": true },
+    { "source": "/landing-page/", "destination": "/", "permanent": true },
+    { "source": "/thank-you", "destination": "/", "permanent": true },
+    { "source": "/thank-you/", "destination": "/", "permanent": true },
+    { "source": "/thank-you-for-applying", "destination": "/", "permanent": true },
+    { "source": "/thank-you-for-applying/", "destination": "/", "permanent": true },
+
+    { "source": "/privacy-policy/", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/terms-of-service/", "destination": "/terms-of-service", "permanent": true },
 
     { "source": "/calculator", "destination": "/pricing", "permanent": true },
     { "source": "/calculator/", "destination": "/pricing", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
