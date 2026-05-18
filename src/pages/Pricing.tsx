@@ -237,7 +237,7 @@ export default function Pricing() {
         
         <div className="relative bg-[#0A0A0A] border border-white/10 rounded-[2rem] p-10 md:p-16 overflow-hidden">
           {/* Noise texture overlay */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+          <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"></div>
           
           <div className="mb-16 max-w-3xl relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Need market intelligence or help entering Brazil?</h2>

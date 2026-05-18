@@ -150,7 +150,7 @@ export default function Blog() {
       <motion.section {...fadeIn} className="px-6 md:px-12 max-w-7xl mx-auto w-full relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-kaptas-green/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="relative bg-[#0A0A0A] rounded-[2rem] p-10 md:p-16 border border-white/10 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+          <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"></div>
           <div className="relative z-10 max-w-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">
               Get hiring insights delivered to your inbox

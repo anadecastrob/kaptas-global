@@ -6,6 +6,8 @@ interface SEOProps {
   keywords?: string;
   canonical: string;
   ogImage?: string;
+  /** og:type — defaults to "website". Use "article" for blog posts. */
+  ogType?: "website" | "article" | "profile" | "book";
   schemas?: object[];
 }
 
@@ -20,7 +22,7 @@ function isStagingHost(): boolean {
   return window.location.hostname.endsWith(".vercel.app");
 }
 
-export function SEO({ title, description, keywords, canonical, ogImage, schemas = [] }: SEOProps) {
+export function SEO({ title, description, keywords, canonical, ogImage, ogType = "website", schemas = [] }: SEOProps) {
   const image = ogImage || 'https://kaptasglobal.io/logo-branco.png';
   const robots = isStagingHost() ? "noindex, follow" : "index, follow";
   return (
@@ -34,7 +36,7 @@ export function SEO({ title, description, keywords, canonical, ogImage, schemas 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
