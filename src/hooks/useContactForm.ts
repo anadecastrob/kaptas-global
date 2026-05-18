@@ -28,19 +28,20 @@ export function useContactForm(source: string) {
     }
     setIsSubmitting(true);
     setError("");
+    const pageUrl = typeof window !== "undefined" ? window.location.href : source;
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New inquiry from ${source} — ${form.name} at ${form.company}`,
+          subject: `New inquiry from ${form.name} at ${form.company} — ${pageUrl}`,
           from_name: "Kaptas Global Website",
           name: form.name,
           company: form.company,
           email: form.email,
           message: form.message,
-          source_page: source,
+          page_url: pageUrl,
         }),
       });
       const data = await res.json();
@@ -48,7 +49,7 @@ export function useContactForm(source: string) {
         setShowModal(true);
         setForm({ name: "", company: "", email: "", message: "" });
       } else {
-        setError("Something went wrong. Please try again or email us directly.");
+        setError(data.message || "Something went wrong. Please try again or email us directly.");
       }
     } catch {
       setError("Network error. Please check your connection and try again.");
