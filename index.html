@@ -26,7 +26,7 @@
       initApollo();
     </script>
 
-    <!-- LinkedIn Insight Tag -->
+    <!-- LinkedIn Insight Tag (script in head; <noscript> img is in body to satisfy HTML5: <img> is not allowed inside a <noscript> in <head>) -->
     <script type="text/javascript">
       _linkedin_partner_id = "7052066";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -43,12 +43,13 @@
         s.parentNode.insertBefore(b, s);
       })(window.lintrk);
     </script>
-    <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=7052066&fmt=gif" />
-    </noscript>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- LinkedIn Insight Tag fallback pixel (no-JS users) -->
+    <noscript>
+      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=7052066&fmt=gif" />
+    </noscript>
   </body>
 </html>
