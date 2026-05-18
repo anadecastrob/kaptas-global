@@ -63,9 +63,22 @@ export const organizationSchema = {
   ]
 };
 
+/**
+ * Speakable specification — applied to every FAQPage schema below.
+ * Tells voice assistants and AI answer engines (Google Assistant, ChatGPT
+ * voice, Perplexity, Gemini, Google AI Overviews) which DOM nodes contain
+ * the canonical answer text. The CSS selector matches the data-speakable
+ * attribute we set on the answer <div> inside every FAQ accordion.
+ */
+const FAQ_SPEAKABLE = {
+  "@type": "SpeakableSpecification",
+  "cssSelector": ["[data-speakable]"]
+} as const;
+
 export const homeFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",
@@ -144,6 +157,7 @@ export const homeServiceSchema = {
 export const pricingFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",
@@ -222,6 +236,7 @@ export const pricingServiceSchema = {
 export const outsourcingFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",
@@ -302,6 +317,7 @@ export const outsourcingServiceSchema = {
 export const executiveMappingFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",
@@ -376,6 +392,7 @@ export const executiveMappingServiceSchema = {
 export const hireInBrazilFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",
@@ -457,6 +474,7 @@ export const hireInBrazilServiceSchema = {
 export const directHireFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "speakable": FAQ_SPEAKABLE,
   "mainEntity": [
     {
       "@type": "Question",

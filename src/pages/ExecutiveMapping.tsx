@@ -681,7 +681,7 @@ export default function ExecutiveMapping() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                    <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed" data-speakable="true">
                       {faq.a}
                     </div>
                   </motion.div>

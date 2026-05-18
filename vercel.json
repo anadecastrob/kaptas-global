@@ -93,6 +93,24 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "kaptas-global.vercel.app" }
+      ],
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "kaptas-global-git-main-anadecastro.vercel.app" }
+      ],
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
     }
   ]
 }

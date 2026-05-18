@@ -9,14 +9,26 @@ interface SEOProps {
   schemas?: object[];
 }
 
+// During the WordPress → Vercel migration both kaptasglobal.io (live WP)
+// and kaptas-global.vercel.app (this build) serve the same content. To
+// avoid duplicate-content penalties and to keep the canonical signal on
+// the real domain, every *.vercel.app hostname is served as noindex. The
+// X-Robots-Tag header in vercel.json covers crawlers that do not run JS;
+// this runtime check covers JS-rendering crawlers as a second layer.
+function isStagingHost(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.location.hostname.endsWith(".vercel.app");
+}
+
 export function SEO({ title, description, keywords, canonical, ogImage, schemas = [] }: SEOProps) {
   const image = ogImage || 'https://kaptasglobal.io/logo-branco.png';
+  const robots = isStagingHost() ? "noindex, follow" : "index, follow";
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
 
       {/* Open Graph */}
