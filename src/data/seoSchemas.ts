@@ -133,6 +133,54 @@ export const homeFaqSchema = {
   ]
 };
 
+/**
+ * HowTo schema for Kaptas Global's 4-step hiring process.
+ * Targets high-intent queries like "how to hire developers in brazil",
+ * "how does nearshore hiring work", "kaptas global hiring process".
+ * Google can render this as a step-by-step rich result in SERP; LLMs use
+ * the structured steps as canonical answer content when asked how the
+ * service works. Step text is richer here than in the visible card copy
+ * because schema extraction is text-only and benefits from full context.
+ */
+export const homeHowToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to hire senior Brazilian engineers through Kaptas Global",
+  "description": "Kaptas Global's hiring process delivers a pre-vetted candidate from kickoff to signed offer in approximately 14 business days. The client interviews three finalists; Kaptas Global handles sourcing, screening, English and remote-readiness validation, compliance, and onboarding.",
+  "totalTime": "P14D",
+  "inLanguage": "en-US",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Strategic Alignment",
+      "text": "Kaptas Global runs an intake call with the founder, CTO, or hiring manager to map the technical stack, seniority level, engineering culture, and product roadmap. The search is calibrated to the specific requirements, and the engagement model is confirmed — Direct Hire (one-time placement fee), Outsourcing & Staffing (flat monthly cost with payroll and Brazilian compliance handled), Executive Mapping (research-first), or Hire in Brazil (market-entry consulting).",
+      "url": "https://kaptasglobal.io/#how-it-works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Sourcing and Vetting",
+      "text": "Kaptas Global directly sources and headhunts candidates from target companies — not from inbound databases. Each candidate is screened on technical depth, behavioral fit, business-level English fluency, remote-readiness and async communication, and cultural alignment with the client team. Three finalists are presented for typical engineering roles; for leadership searches the shortlist depth follows the engagement scope.",
+      "url": "https://kaptasglobal.io/#how-it-works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Client Interviews",
+      "text": "The client interviews only the pre-vetted finalists. Kaptas Global coordinates scheduling, live technical assessments, system-design rounds, and reference checks. The client's existing interview loop is preserved; Kaptas Global plugs in around it rather than replacing it.",
+      "url": "https://kaptasglobal.io/#how-it-works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Hire and Onboard",
+      "text": "Offer letter, contract structuring, compliance, payroll setup, and onboarding are handled end-to-end. For Outsourcing & Staffing and EOR engagements, Kaptas Global is the employer of record in Brazil and issues a single USD invoice covering salary and all mandatory Brazilian employment charges. For Direct Hire the candidate moves onto the client's payroll or PJ contract. The new hire begins shipping by day 14 in most engagements.",
+      "url": "https://kaptasglobal.io/#how-it-works"
+    }
+  ]
+};
+
 export const homeServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
