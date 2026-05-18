@@ -29,7 +29,8 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import http from "node:http";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.join(__dirname, "../dist");
@@ -97,9 +98,32 @@ const server = http.createServer(async (req, res) => {
 
 await new Promise((resolve) => server.listen(PORT, "127.0.0.1", resolve));
 
+// @sparticuz/chromium bundles a Linux Chromium with the shared libraries
+// (libnspr4, libnss3, etc.) that Vercel's build environment is missing.
+// Locally on Windows / macOS dev machines, fall back to system Chrome via
+// PUPPETEER_EXECUTABLE_PATH or skip the prerender step entirely.
+let executablePath;
+try {
+  executablePath = process.env.PUPPETEER_EXECUTABLE_PATH
+    ?? (await chromium.executablePath());
+} catch (err) {
+  if (!process.env.PUPPETEER_EXECUTABLE_PATH) {
+    console.warn(
+      `⚠️  Chromium not available on this platform (${process.platform}). ` +
+      `Set PUPPETEER_EXECUTABLE_PATH to a local Chrome to run prerender ` +
+      `locally, or push to Vercel where the bundled Linux Chromium works.`
+    );
+    server.close();
+    process.exit(0);
+  }
+  throw err;
+}
+
 const browser = await puppeteer.launch({
-  headless: "shell",
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  args: chromium.args,
+  defaultViewport: chromium.defaultViewport,
+  executablePath,
+  headless: true,
 });
 
 console.log(`📸 Pre-rendering ${ALL_ROUTES.length} routes...`);
