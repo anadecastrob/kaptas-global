@@ -293,7 +293,7 @@ export default function DirectHire() {
               <span className="text-gray-500 text-xs uppercase tracking-wider">Combined experience in<br />Brazil's tech market</span>
             </div>
             <div className="flex flex-col items-center text-center">
-              <span className="text-[40px] leading-[48px] font-semibold text-kaptas-green mb-2 tracking-tight">30+</span>
+              <span className="text-[40px] leading-[48px] font-semibold text-kaptas-green mb-2 tracking-tight">100+</span>
               <span className="text-base font-medium text-gray-300 mb-1">Clients</span>
               <span className="text-gray-500 text-xs uppercase tracking-wider">US and global<br />companies served</span>
             </div>

@@ -29,7 +29,7 @@ export function Differentiation() {
           <span className="text-gray-500 text-sm">Combined experience in<br />Brazil's tech market</span>
         </motion.div>
         <motion.div variants={staggerItem} className="flex flex-col items-center text-center">
-          <span className="text-4xl md:text-5xl font-bold text-kaptas-green mb-2">30+</span>
+          <span className="text-4xl md:text-5xl font-bold text-kaptas-green mb-2">100+</span>
           <span className="text-lg font-medium text-gray-300 mb-1">Clients</span>
           <span className="text-gray-500 text-sm">US and global<br />companies served</span>
         </motion.div>

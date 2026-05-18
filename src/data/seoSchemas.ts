@@ -113,7 +113,7 @@ export const homeFaqSchema = {
     {
       "@type": "Question",
       "name": "What types of roles can Kaptas Global fill?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Kaptas Global recruits across technology (software engineers, QA, data engineers, DevOps, product managers, engineering managers), finance, sales, marketing, operations, HR, and executive leadership. The team has completed 300+ placements across 30+ global clients." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Kaptas Global recruits across technology (software engineers, QA, data engineers, DevOps, product managers, engineering managers), finance, sales, marketing, operations, HR, and executive leadership. The team has completed 300+ placements across 100+ global clients." }
     },
     {
       "@type": "Question",
@@ -128,7 +128,7 @@ export const homeFaqSchema = {
     {
       "@type": "Question",
       "name": "What makes Kaptas Global different from other recruitment agencies?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Kaptas Global is US-incorporated and founded by Brazilians with over 20 years of combined experience in the Brazil-US hiring market. The company operates as a two-person team, meaning every client works directly with the founders. Kaptas Global serves 30+ clients worldwide with a 75% repeat-client rate, transparent pricing, and performance-based engagement models." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Kaptas Global is US-incorporated and founded by Brazilians with over 20 years of combined experience in the Brazil-US hiring market. The company operates as a two-person team, meaning every client works directly with the founders. Kaptas Global serves 100+ clients worldwide with a 75% repeat-client rate, transparent pricing, and performance-based engagement models." }
     }
   ]
 };
