@@ -311,7 +311,7 @@ export default function PrivacyPolicy() {
 
             <h2 id="how-to-exercise">12. How to Exercise Your Rights</h2>
             <p>
-              To exercise any of the rights described above, email <a href="mailto:privacy@kaptasglobal.io">privacy@kaptasglobal.io</a> or <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a>. Please describe your request and the jurisdiction whose rights you are invoking. We may need to verify your identity before processing the request, which typically requires confirming information we already have on file. We will respond within the timeframe required by applicable law (generally within <strong>15&nbsp;days</strong> under LGPD and <strong>30&nbsp;days</strong> under GDPR and CCPA/CPRA, with one possible extension where permitted).
+              To exercise any of the rights described above, email <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a>. Please describe your request and the jurisdiction whose rights you are invoking. We may need to verify your identity before processing the request, which typically requires confirming information we already have on file. We will respond within the timeframe required by applicable law (generally within <strong>15&nbsp;days</strong> under LGPD and <strong>30&nbsp;days</strong> under GDPR and CCPA/CPRA, with one possible extension where permitted).
             </p>
 
             <h2 id="cookies">13. Cookies and Similar Technologies</h2>
@@ -353,7 +353,7 @@ export default function PrivacyPolicy() {
               <strong>HR Technology LLC</strong> (d/b/a Kaptas Global)<br />
               7345 W Sand Lake Rd, Ste 210, Office 460<br />
               Orlando, FL 32819, United States<br />
-              Email: <a href="mailto:privacy@kaptasglobal.io">privacy@kaptasglobal.io</a> · <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a><br />
+              Email: <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a><br />
               Phone: <a href="tel:+16892939252">+1 (689) 293-9252</a>
             </p>
           </article>
@@ -374,10 +374,10 @@ export default function PrivacyPolicy() {
               </div>
             </div>
             <a
-              href="mailto:privacy@kaptasglobal.io"
+              href="mailto:support@kaptasglobal.io"
               className="bg-kaptas-green text-kaptas-black px-5 py-2.5 rounded-lg border border-kaptas-green text-sm font-semibold hover:brightness-90 transition-all duration-300 flex items-center gap-2 hover:shadow-[0_0_15px_var(--color-kaptas-green)] w-fit whitespace-nowrap"
             >
-              Contact privacy team
+              Contact our team
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

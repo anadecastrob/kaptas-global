@@ -316,7 +316,7 @@ export default function TermsOfService() {
               <li><strong>Assignment.</strong> You may not assign or transfer these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, financing, or sale of assets.</li>
               <li><strong>Force majeure.</strong> Neither party is liable for failure or delay in performance due to causes beyond its reasonable control.</li>
               <li><strong>Independent contractors.</strong> Nothing in these Terms creates a partnership, joint venture, or employment relationship between you and Kaptas Global. Each party remains an independent contractor.</li>
-              <li><strong>Notices.</strong> Legal notices to Kaptas Global must be sent to <a href="mailto:legal@kaptasglobal.io">legal@kaptasglobal.io</a> and to the address in Section&nbsp;1, with a copy delivered by reputable courier.</li>
+              <li><strong>Notices.</strong> Legal notices to Kaptas Global must be sent to <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a> and to the address in Section&nbsp;1, with a copy delivered by reputable courier.</li>
             </ul>
 
             <h2 id="contact">19. Contact</h2>
@@ -327,7 +327,7 @@ export default function TermsOfService() {
               <strong>HR Technology LLC</strong> (d/b/a Kaptas Global)<br />
               7345 W Sand Lake Rd, Ste 210, Office 460<br />
               Orlando, FL 32819, United States<br />
-              Email: <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a> · <a href="mailto:legal@kaptasglobal.io">legal@kaptasglobal.io</a><br />
+              Email: <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a><br />
               Phone: <a href="tel:+16892939252">+1 (689) 293-9252</a>
             </p>
           </article>
