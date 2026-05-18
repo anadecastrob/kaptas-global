@@ -128,7 +128,7 @@ export default function TermsOfService() {
 
             <h2 id="acceptance">1. Acceptance of Terms</h2>
             <p>
-              These Terms of Service (the <strong>"Terms"</strong>) are entered into between you (<strong>"you"</strong> or <strong>"Client"</strong>) and Kaptas Global LLC, a Florida limited liability company with its principal place of business at 7345 W Sand Lake Rd, Ste&nbsp;210, Office&nbsp;460, Orlando, FL 32819 (<strong>"Kaptas Global,"</strong> <strong>"we,"</strong> <strong>"us,"</strong> or <strong>"our"</strong>).
+              These Terms of Service (the <strong>"Terms"</strong>) are entered into between you (<strong>"you"</strong> or <strong>"Client"</strong>) and HR Technology LLC, a Florida limited liability company doing business as <strong>Kaptas Global</strong>, with its principal place of business at 7345 W Sand Lake Rd, Ste&nbsp;210, Office&nbsp;460, Orlando, FL 32819 (<strong>"Kaptas Global,"</strong> <strong>"we,"</strong> <strong>"us,"</strong> or <strong>"our"</strong>).
             </p>
             <p>
               By accessing or using the website at <a href="https://kaptasglobal.io">kaptasglobal.io</a> (the <strong>"Site"</strong>) or any of the recruitment, staffing, market-intelligence, or related services we offer (collectively, the <strong>"Services"</strong>), you agree to be bound by these Terms and by our <Link to="/privacy-policy">Privacy Policy</Link>. If you do not agree, do not use the Site or the Services.
@@ -317,7 +317,7 @@ export default function TermsOfService() {
               For questions about these Terms, contact us at:
             </p>
             <p>
-              <strong>Kaptas Global LLC</strong><br />
+              <strong>HR Technology LLC</strong> (d/b/a Kaptas Global)<br />
               7345 W Sand Lake Rd, Ste 210, Office 460<br />
               Orlando, FL 32819, United States<br />
               Email: <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a> · <a href="mailto:legal@kaptasglobal.io">legal@kaptasglobal.io</a><br />

@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
           >
             <h2 id="introduction">1. Introduction</h2>
             <p>
-              Kaptas Global LLC (<strong>"Kaptas Global,"</strong> <strong>"we,"</strong> <strong>"us,"</strong> or <strong>"our"</strong>) provides recruitment, staffing, and market-entry services that connect companies — primarily in the United States — with senior professionals based in Brazil and other Latin American countries. We operate the website at <a href="https://kaptasglobal.io">kaptasglobal.io</a> (the <strong>"Site"</strong>) and offer related services described at that address (collectively, the <strong>"Services"</strong>).
+              HR Technology LLC, a Florida limited liability company doing business as <strong>Kaptas Global</strong> (<strong>"Kaptas Global,"</strong> <strong>"we,"</strong> <strong>"us,"</strong> or <strong>"our"</strong>), provides recruitment, staffing, and market-entry services that connect companies — primarily in the United States — with senior professionals based in Brazil and other Latin American countries. We operate the website at <a href="https://kaptasglobal.io">kaptasglobal.io</a> (the <strong>"Site"</strong>) and offer related services described at that address (collectively, the <strong>"Services"</strong>).
             </p>
             <p>
               This Privacy Policy describes how we collect, use, share, and protect personal information when you interact with the Site or Services. It also explains the rights you have over your personal information under the General Data Protection Law of Brazil (<strong>LGPD</strong>), the General Data Protection Regulation of the European Union and United Kingdom (<strong>GDPR / UK&nbsp;GDPR</strong>), and the California Consumer Privacy Act as amended by the California Privacy Rights Act (<strong>CCPA/CPRA</strong>), where applicable.
@@ -343,7 +343,7 @@ export default function PrivacyPolicy() {
               For any privacy-related question or to exercise the rights described in Section&nbsp;11, contact us at:
             </p>
             <p>
-              <strong>Kaptas Global LLC</strong><br />
+              <strong>HR Technology LLC</strong> (d/b/a Kaptas Global)<br />
               7345 W Sand Lake Rd, Ste 210, Office 460<br />
               Orlando, FL 32819, United States<br />
               Email: <a href="mailto:privacy@kaptasglobal.io">privacy@kaptasglobal.io</a> · <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a><br />
