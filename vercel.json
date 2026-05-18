@@ -147,6 +147,9 @@
     { "source": "/calculator", "destination": "/pricing", "permanent": true },
     { "source": "/calculator/", "destination": "/pricing", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
