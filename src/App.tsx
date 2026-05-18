@@ -8,6 +8,7 @@ import DirectHire from "./pages/DirectHire";
 import ContractorStaffing from "./pages/ContractorStaffing";
 import ExecutiveMapping from "./pages/ExecutiveMapping";
 import StartOperation from "./pages/StartOperation";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="contractor-staffing" element={<ContractorStaffing />} />
           <Route path="executive-mapping" element={<ExecutiveMapping />} />
           <Route path="start-operation" element={<StartOperation />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
