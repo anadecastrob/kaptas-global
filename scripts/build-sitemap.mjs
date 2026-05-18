@@ -22,7 +22,7 @@ const staticPages = [
   { url: "/direct-hire",         priority: "0.9", changefreq: "monthly" },
   { url: "/contractor-staffing", priority: "0.9", changefreq: "monthly" },
   { url: "/executive-mapping",   priority: "0.9", changefreq: "monthly" },
-  { url: "/start-operation",     priority: "0.9", changefreq: "monthly" },
+  { url: "/hire-in-brazil",      priority: "0.9", changefreq: "monthly" },
   { url: "/ebook",               priority: "0.7", changefreq: "monthly" },
   { url: "/privacy-policy",      priority: "0.3", changefreq: "yearly"  },
   { url: "/terms-of-service",    priority: "0.3", changefreq: "yearly"  },

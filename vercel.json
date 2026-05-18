@@ -102,8 +102,10 @@
     { "source": "/global-executive-search", "destination": "/executive-mapping", "permanent": true },
     { "source": "/global-executive-search/", "destination": "/executive-mapping", "permanent": true },
 
-    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas", "destination": "/start-operation", "permanent": true },
-    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas/", "destination": "/start-operation", "permanent": true },
+    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas", "destination": "/hire-in-brazil", "permanent": true },
+    { "source": "/hire-brazilians-with-u-s-or-canada-work-visas/", "destination": "/hire-in-brazil", "permanent": true },
+    { "source": "/start-operation", "destination": "/hire-in-brazil", "permanent": true },
+    { "source": "/start-operation/", "destination": "/hire-in-brazil", "permanent": true },
 
     { "source": "/senior-full-stack-developer", "destination": "/direct-hire", "permanent": true },
     { "source": "/senior-full-stack-developer/", "destination": "/direct-hire", "permanent": true },

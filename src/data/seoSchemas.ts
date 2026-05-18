@@ -197,7 +197,7 @@ export const homeServiceSchema = {
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Direct Hire", "description": "One-time placement fee of 18% of first-year salary. No retainer. 90-180 day replacement guarantee.", "url": "https://kaptasglobal.io/direct-hire" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outsourcing & Staffing", "description": "Flat monthly cost per professional including salary, CLT charges, and management fee. Unlimited replacements during contract.", "url": "https://kaptasglobal.io/contractor-staffing" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Executive Mapping", "description": "Market intelligence report with salary benchmarks, competitor org charts, and passive candidate shortlist. Delivery in 10-15 business days.", "url": "https://kaptasglobal.io/executive-mapping" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hire in Brazil", "description": "Market-entry consulting including compensation analysis, hiring-model recommendation (CLT, PJ, EOR), and first-hire support.", "url": "https://kaptasglobal.io/start-operation" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hire in Brazil", "description": "Market-entry consulting including compensation analysis, hiring-model recommendation (CLT, PJ, EOR), and first-hire support.", "url": "https://kaptasglobal.io/hire-in-brazil" } }
     ]
   }
 };
@@ -276,7 +276,7 @@ export const pricingServiceSchema = {
       { "@type": "Offer", "name": "Direct Hire", "description": "One-time recruitment fee of 18% of the professional's first-year salary. No retainer, no deposit. Includes a 90-180 day replacement guarantee.", "price": "18%", "priceCurrency": "USD", "url": "https://kaptasglobal.io/direct-hire" },
       { "@type": "Offer", "name": "Outsourcing & Staffing", "description": "Flat monthly cost per professional covering salary, Brazilian employment charges, Kaptas Global fees, and HR support in a single invoice. Unlimited replacement included.", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "unitCode": "MON", "referenceQuantity": { "@type": "QuantitativeValue", "value": "1", "unitText": "professional" } }, "url": "https://kaptasglobal.io/contractor-staffing" },
       { "@type": "Offer", "name": "Executive Mapping", "description": "Custom project fee. Delivers candidate profiles, compensation benchmarks, and market analysis within 10-15 business days.", "url": "https://kaptasglobal.io/executive-mapping" },
-      { "@type": "Offer", "name": "Hire in Brazil", "description": "Custom engagement for companies entering or expanding operations in Brazil.", "url": "https://kaptasglobal.io/start-operation" }
+      { "@type": "Offer", "name": "Hire in Brazil", "description": "Custom engagement for companies entering or expanding operations in Brazil.", "url": "https://kaptasglobal.io/hire-in-brazil" }
     ]
   }
 };
@@ -515,8 +515,8 @@ export const hireInBrazilServiceSchema = {
       { "@type": "Offer", "name": "Replacement Guarantee", "description": "90 to 180-day replacement guarantee depending on role level. If a hire does not work out within the guarantee period, Kaptas Global restarts the search at no additional cost." }
     ]
   },
-  "url": "https://kaptasglobal.io/start-operation",
-  "potentialAction": { "@type": "Action", "name": "Plan your first hire", "target": "https://kaptasglobal.io/start-operation#form" }
+  "url": "https://kaptasglobal.io/hire-in-brazil",
+  "potentialAction": { "@type": "Action", "name": "Plan your first hire", "target": "https://kaptasglobal.io/hire-in-brazil#form" }
 };
 
 export const directHireFaqSchema = {

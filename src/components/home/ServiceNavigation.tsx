@@ -119,7 +119,7 @@ export function ServiceNavigation() {
         </Link>
 
         {/* Hire in Brazil (Spans 4 cols) */}
-        <Link to="/start-operation" className="group md:col-span-6 lg:col-span-4 bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500 relative overflow-hidden flex flex-col justify-between min-h-[280px]">
+        <Link to="/hire-in-brazil" className="group md:col-span-6 lg:col-span-4 bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:border-white/30 transition-all duration-500 relative overflow-hidden flex flex-col justify-between min-h-[280px]">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-10 -mt-10 transition-opacity duration-500 opacity-0 group-hover:opacity-100"></div>
           
           <div className="relative z-10 mb-8">

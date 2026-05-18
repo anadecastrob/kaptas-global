@@ -269,7 +269,7 @@ export default function Pricing() {
                 <p className="text-gray-400 mb-8 leading-relaxed text-sm">
                   Custom engagement. Competitor landscape, compensation benchmarking, hiring-model recommendation, and end-to-end recruitment for your first local hire.
                 </p>
-                <Link to="/start-operation" className="inline-flex items-center gap-2 text-white font-medium hover:text-[#0047FF] transition-colors group/link text-sm uppercase tracking-wider">
+                <Link to="/hire-in-brazil" className="inline-flex items-center gap-2 text-white font-medium hover:text-[#0047FF] transition-colors group/link text-sm uppercase tracking-wider">
                   Request a proposal <ChevronRight className="w-4 h-4 text-[#0047FF] group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>

@@ -88,14 +88,14 @@ export default function StartOperation() {
         title="Hire in Brazil — Kaptas Global | Market Entry Recruitment & First Hires"
         description="Hire your first employees in Brazil without a local entity. Kaptas Global provides market analysis, compensation benchmarks, hiring-model consulting (CLT, PJ, EOR), and end-to-end recruitment for companies entering Brazil."
         keywords="hire in brazil, hire employees brazil, market entry brazil, first hire brazil, employer of record brazil, EOR brazil, CLT vs PJ brazil, hiring costs brazil, recruit in brazil, expand to brazil, kaptas global, nearshore hiring brazil, brazil talent acquisition, hire without entity brazil, latin america market entry"
-        canonical="https://kaptasglobal.io/start-operation"
+        canonical="https://kaptasglobal.io/hire-in-brazil"
         schemas={[
           organizationSchema,
           hireInBrazilServiceSchema,
           hireInBrazilFaqSchema,
           buildBreadcrumbSchema([
             { name: "Home", url: `${SITE_URL}/` },
-            { name: "Hire in Brazil", url: `${SITE_URL}/start-operation` },
+            { name: "Hire in Brazil", url: `${SITE_URL}/hire-in-brazil` },
           ]),
         ]}
       />

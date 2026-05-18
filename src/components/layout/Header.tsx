@@ -28,7 +28,7 @@ export function Header() {
     { name: "Direct Hire", path: "/direct-hire" },
     { name: "Outsourcing & Staffing", path: "/contractor-staffing" },
     { name: "Executive Mapping", path: "/executive-mapping" },
-    { name: "Hire in Brazil", path: "/start-operation" },
+    { name: "Hire in Brazil", path: "/hire-in-brazil" },
   ];
 
   return (

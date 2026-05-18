@@ -7,7 +7,7 @@ const popularDestinations = [
   { label: "Direct Hire", to: "/direct-hire" },
   { label: "Contractor & Staffing", to: "/contractor-staffing" },
   { label: "Executive Mapping", to: "/executive-mapping" },
-  { label: "Start Operation in Brazil", to: "/start-operation" },
+  { label: "Hire in Brazil", to: "/hire-in-brazil" },
   { label: "Pricing", to: "/pricing" },
   { label: "Blog", to: "/blog" },
 ];

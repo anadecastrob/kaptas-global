@@ -25,7 +25,7 @@ export default function App() {
           <Route path="direct-hire" element={<DirectHire />} />
           <Route path="contractor-staffing" element={<ContractorStaffing />} />
           <Route path="executive-mapping" element={<ExecutiveMapping />} />
-          <Route path="start-operation" element={<StartOperation />} />
+          <Route path="hire-in-brazil" element={<StartOperation />} />
           <Route path="ebook" element={<Ebook />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-service" element={<TermsOfService />} />
