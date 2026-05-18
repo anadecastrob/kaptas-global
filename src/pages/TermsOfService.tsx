@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Scale, Mail, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
-import { organizationSchema } from "../data/seoSchemas";
+import { organizationSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
 
 const LAST_UPDATED = "May 18, 2026";
 const EFFECTIVE_DATE = "May 18, 2026";
@@ -49,7 +49,14 @@ export default function TermsOfService() {
         description="The terms that govern your use of Kaptas Global's website and recruitment, staffing, and market-entry services. Includes eligibility, fees, intellectual property, warranties, liability, and dispute resolution."
         keywords="kaptas global terms of service, recruitment service agreement, staffing terms, hiring terms and conditions"
         canonical="https://kaptasglobal.io/terms-of-service"
-        schemas={[termsSchema, organizationSchema]}
+        schemas={[
+          organizationSchema,
+          termsSchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Terms of Service", url: `${SITE_URL}/terms-of-service` },
+          ]),
+        ]}
       />
 
       <motion.section

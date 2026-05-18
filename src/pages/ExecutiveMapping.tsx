@@ -1,5 +1,7 @@
 import { SEO } from "../components/SEO";
-import { organizationSchema, executiveMappingFaqSchema, executiveMappingServiceSchema } from "../data/seoSchemas";
+import { AEOContent } from "../components/AEOContent";
+import { organizationSchema, executiveMappingFaqSchema, executiveMappingServiceSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import { ThankYouModal } from "../components/ThankYouModal";
@@ -78,8 +80,17 @@ export default function ExecutiveMapping() {
         description="Kaptas Global maps 20-30 leadership professionals for your target role in Brazil and Latin America. Competitor compensation analysis, team structures, salary benchmarks, and a ranked shortlist of top candidates. Delivered in 10-15 business days."
         keywords="executive mapping Brazil, executive talent mapping Latin America, leadership hiring Brazil, competitor compensation analysis Brazil, C-level salary benchmarks Brazil, talent intelligence Brazil, hire country manager Brazil, executive search Brazil, Kaptas Global, talent mapping Latin America"
         canonical="https://kaptasglobal.io/executive-mapping"
-        schemas={[executiveMappingFaqSchema, organizationSchema, executiveMappingServiceSchema]}
+        schemas={[
+          organizationSchema,
+          executiveMappingServiceSchema,
+          executiveMappingFaqSchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Executive Mapping", url: `${SITE_URL}/executive-mapping` },
+          ]),
+        ]}
       />
+      <AEOContent paragraph={AEO_PARAGRAPHS.executiveMapping} label="Executive Mapping service overview" />
       {/* 1. Hero with Image */}
       <motion.section
         initial={{ opacity: 0 }}

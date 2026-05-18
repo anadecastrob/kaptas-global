@@ -1,12 +1,22 @@
+/**
+ * Schema identifiers — used to cross-link schemas across pages.
+ * Google and LLM-based crawlers use `@id` to merge schemas referencing the
+ * same entity instead of duplicating the data on every page.
+ */
+export const SITE_URL = "https://kaptasglobal.io";
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": ORG_ID,
   "name": "Kaptas Global",
   "legalName": "HR Technology LLC",
   "alternateName": ["Kaptas Global", "HR Technology LLC d/b/a Kaptas Global"],
-  "url": "https://kaptasglobal.io",
-  "logo": "https://kaptasglobal.io/logo-branco.png",
-  "description": "Kaptas Global is a recruitment company that connects US-based companies with pre-vetted Brazilian professionals. Services include Direct Hire, Outsourcing and Staffing, Executive Mapping, and Hire in Brazil. Kaptas Global is the trade name of HR Technology LLC, a US-incorporated Florida limited liability company.",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/logo-branco.png`,
+  "description": "Kaptas Global is a strategic hiring partner connecting founder-led U.S. technology companies with senior remote engineering and operating talent in Brazil and Latin America. Services include Direct Hire, Outsourcing & Staffing, Executive Mapping, and Hire in Brazil. Kaptas Global is the trade name of HR Technology LLC, a US-incorporated Florida limited liability company.",
   "foundingDate": "2024",
   "founder": [
     { "@type": "Person", "name": "Rodolfo Chaves" },
@@ -523,3 +533,49 @@ export const directHireServiceSchema = {
   "url": "https://kaptasglobal.io/direct-hire",
   "potentialAction": { "@type": "Action", "name": "Start for free", "target": "https://kaptasglobal.io/direct-hire#form" }
 };
+
+/**
+ * WebSite schema — emitted only on the home page.
+ * Declares the domain as a single coherent web entity that LLMs and Google
+ * can associate with the Organization via the shared @id graph.
+ * Search action intentionally omitted: there is no real on-site search yet,
+ * and a fake SearchAction misleads structured-data consumers.
+ */
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  "url": SITE_URL,
+  "name": "Kaptas Global",
+  "alternateName": ["HR Technology LLC d/b/a Kaptas Global"],
+  "description": "Strategic hiring partner connecting founder-led U.S. technology companies with senior remote engineering and operating talent in Brazil and Latin America.",
+  "publisher": { "@id": ORG_ID },
+  "inLanguage": "en-US",
+  "copyrightYear": 2024,
+  "copyrightHolder": { "@id": ORG_ID }
+};
+
+/**
+ * BreadcrumbList builder — emit on every page except the home.
+ * Items must be ordered from the site root to the current page.
+ * Visible breadcrumbs are not required by Google for valid rich results,
+ * but a future visual implementation must match this schema exactly.
+ *
+ * Usage:
+ *   const crumbs = buildBreadcrumbSchema([
+ *     { name: "Home", url: SITE_URL },
+ *     { name: "Direct Hire", url: `${SITE_URL}/direct-hire` },
+ *   ]);
+ */
+export function buildBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}

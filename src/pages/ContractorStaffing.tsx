@@ -1,5 +1,7 @@
 import { SEO } from "../components/SEO";
-import { organizationSchema, outsourcingFaqSchema, outsourcingServiceSchema } from "../data/seoSchemas";
+import { AEOContent } from "../components/AEOContent";
+import { organizationSchema, outsourcingFaqSchema, outsourcingServiceSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import { ThankYouModal } from "../components/ThankYouModal";
@@ -87,8 +89,17 @@ export default function ContractorStaffing() {
         description="Kaptas Global helps US companies hire senior remote professionals in Brazil and Latin America. We handle sourcing, payroll, and compliance. Zero upfront cost. 14-day average time to hire. Full IP ownership. One monthly invoice in USD."
         keywords="outsourcing staffing Brazil, hire remote talent Latin America, nearshore hiring Brazil, contractor payroll Brazil, hire engineers Brazil, Kaptas Global, nearshore staffing, remote professionals Latin America, IP ownership contractor Brazil"
         canonical="https://kaptasglobal.io/contractor-staffing"
-        schemas={[outsourcingFaqSchema, organizationSchema, outsourcingServiceSchema]}
+        schemas={[
+          organizationSchema,
+          outsourcingServiceSchema,
+          outsourcingFaqSchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Outsourcing & Staffing", url: `${SITE_URL}/contractor-staffing` },
+          ]),
+        ]}
       />
+      <AEOContent paragraph={AEO_PARAGRAPHS.outsourcingStaffing} label="Outsourcing & Staffing service overview" />
       {/* 1. Hero with Image */}
       <motion.section 
         initial={{ opacity: 0 }}

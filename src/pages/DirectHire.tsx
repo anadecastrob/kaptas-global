@@ -1,5 +1,7 @@
 import { SEO } from "../components/SEO";
-import { organizationSchema, directHireFaqSchema, directHireServiceSchema } from "../data/seoSchemas";
+import { AEOContent } from "../components/AEOContent";
+import { organizationSchema, directHireFaqSchema, directHireServiceSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import { ThankYouModal } from "../components/ThankYouModal";
@@ -87,8 +89,17 @@ export default function DirectHire() {
         description="Hire Brazilian professionals directly on your team. Pre-vetted shortlist in 5 days. 18% one-time fee, paid after hire. Replacement warranty included."
         keywords="direct hire brazil, hire developers brazil, one-time recruitment fee brazil, hire brazilian engineers, direct placement brazil, tech talent brazil, 18% hiring fee, pre-vetted developers brazil, replacement guarantee hiring, remote developers brazil"
         canonical="https://kaptasglobal.io/direct-hire"
-        schemas={[directHireFaqSchema, organizationSchema, directHireServiceSchema]}
+        schemas={[
+          organizationSchema,
+          directHireServiceSchema,
+          directHireFaqSchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Direct Hire", url: `${SITE_URL}/direct-hire` },
+          ]),
+        ]}
       />
+      <AEOContent paragraph={AEO_PARAGRAPHS.directHire} label="Direct Hire service overview" />
       {/* 1. Hero with Image */}
       <motion.section
         initial={{ opacity: 0 }}

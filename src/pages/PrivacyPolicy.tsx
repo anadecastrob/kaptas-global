@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ShieldCheck, Mail, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
-import { organizationSchema } from "../data/seoSchemas";
+import { organizationSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
 
 const LAST_UPDATED = "May 18, 2026";
 const EFFECTIVE_DATE = "May 18, 2026";
@@ -50,7 +50,14 @@ export default function PrivacyPolicy() {
         description="How Kaptas Global collects, uses, shares, and protects personal information. Includes data subject rights under LGPD (Brazil), GDPR (EEA/UK), and CCPA/CPRA (California)."
         keywords="kaptas global privacy policy, data protection, LGPD, GDPR, CCPA, personal data, data subject rights"
         canonical="https://kaptasglobal.io/privacy-policy"
-        schemas={[privacyPolicySchema, organizationSchema]}
+        schemas={[
+          organizationSchema,
+          privacyPolicySchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Privacy Policy", url: `${SITE_URL}/privacy-policy` },
+          ]),
+        ]}
       />
 
       <motion.section

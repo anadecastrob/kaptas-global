@@ -1,5 +1,7 @@
 import { SEO } from "../components/SEO";
-import { organizationSchema, homeFaqSchema, homeServiceSchema } from "../data/seoSchemas";
+import { AEOContent } from "../components/AEOContent";
+import { organizationSchema, homeFaqSchema, homeServiceSchema, websiteSchema } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import { Hero } from "../components/home/Hero";
 import { SocialProof } from "../components/home/SocialProof";
 import { WhyBrazil } from "../components/home/WhyBrazil";
@@ -22,8 +24,9 @@ export default function Home() {
         description="Hire senior Brazilian developers, engineers, and specialists for your US team. Outsourcing & Staffing, Direct Hire, Executive Mapping, and market entry support. 60% cost reduction, US timezone overlap, candidates in 5 days."
         keywords="hire developers brazil, outsourcing brazil, direct hire brazil, nearshore developers, employer of record brazil, brazil tech talent, cost to hire developers brazil, remote developers brazil, brazilian engineers, kaptas global"
         canonical="https://kaptasglobal.io/"
-        schemas={[homeFaqSchema, organizationSchema, homeServiceSchema]}
+        schemas={[websiteSchema, organizationSchema, homeServiceSchema, homeFaqSchema]}
       />
+      <AEOContent paragraph={AEO_PARAGRAPHS.home} label="Kaptas Global overview" />
       <Hero />
       {/* <SocialProof /> */}
       <WhyBrazil />

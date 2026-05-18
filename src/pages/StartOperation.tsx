@@ -1,5 +1,7 @@
 import { SEO } from "../components/SEO";
-import { organizationSchema, hireInBrazilFaqSchema, hireInBrazilServiceSchema } from "../data/seoSchemas";
+import { AEOContent } from "../components/AEOContent";
+import { organizationSchema, hireInBrazilFaqSchema, hireInBrazilServiceSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import { useState } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import { ThankYouModal } from "../components/ThankYouModal";
@@ -87,8 +89,17 @@ export default function StartOperation() {
         description="Hire your first employees in Brazil without a local entity. Kaptas Global provides market analysis, compensation benchmarks, hiring-model consulting (CLT, PJ, EOR), and end-to-end recruitment for companies entering Brazil."
         keywords="hire in brazil, hire employees brazil, market entry brazil, first hire brazil, employer of record brazil, EOR brazil, CLT vs PJ brazil, hiring costs brazil, recruit in brazil, expand to brazil, kaptas global, nearshore hiring brazil, brazil talent acquisition, hire without entity brazil, latin america market entry"
         canonical="https://kaptasglobal.io/start-operation"
-        schemas={[hireInBrazilFaqSchema, organizationSchema, hireInBrazilServiceSchema]}
+        schemas={[
+          organizationSchema,
+          hireInBrazilServiceSchema,
+          hireInBrazilFaqSchema,
+          buildBreadcrumbSchema([
+            { name: "Home", url: `${SITE_URL}/` },
+            { name: "Hire in Brazil", url: `${SITE_URL}/start-operation` },
+          ]),
+        ]}
       />
+      <AEOContent paragraph={AEO_PARAGRAPHS.hireInBrazil} label="Hire in Brazil service overview" />
       {/* 1. Hero with Image */}
       <motion.section
         initial={{ opacity: 0 }}

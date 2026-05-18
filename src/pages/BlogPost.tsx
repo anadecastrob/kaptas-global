@@ -2,8 +2,35 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { SEO } from "../components/SEO";
-import { organizationSchema } from "../data/seoSchemas";
+import { organizationSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
 import blogPosts from "../data/blog-posts.json";
+
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+  hellip: "...",
+  mdash: "—",
+  ndash: "–",
+  rsquo: "’",
+  lsquo: "‘",
+  rdquo: "”",
+  ldquo: "“",
+};
+
+function decodeHtmlEntities(input: string): string {
+  return input
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, code) => String.fromCharCode(parseInt(code, 16)))
+    .replace(/&([a-zA-Z]+);/g, (match, name) => NAMED_ENTITIES[name] ?? match);
+}
+
+function stripHtml(input: string): string {
+  return decodeHtmlEntities(input.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+}
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -18,28 +45,37 @@ export default function BlogPost() {
     day: "numeric",
   });
 
-  const plainExcerpt = post.excerpt.replace(/<[^>]+>/g, "").replace(/\[&hellip;\]/, "").trim();
+  const plainTitle = stripHtml(post.title);
+  const plainExcerpt = stripHtml(post.excerpt).replace(/\[\.\.\.\]$/, "").trim();
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": post.title,
+    "headline": plainTitle,
     "description": plainExcerpt,
     "datePublished": post.date,
+    "dateModified": post.date,
     "image": post.featured_image || "https://kaptasglobal.io/logo-branco.png",
     "author": { "@type": "Organization", "name": "Kaptas Global", "url": "https://kaptasglobal.io" },
     "publisher": { "@type": "Organization", "name": "Kaptas Global", "logo": { "@type": "ImageObject", "url": "https://kaptasglobal.io/logo-branco.png" } },
-    "url": `https://kaptasglobal.io/blog/${post.slug}`,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+    "url": `${SITE_URL}/blog/${post.slug}`,
   };
+
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/` },
+    { name: "Blog", url: `${SITE_URL}/blog` },
+    { name: plainTitle, url: `${SITE_URL}/blog/${post.slug}` },
+  ]);
 
   return (
     <div className="flex flex-col pb-24">
       <SEO
-        title={`${post.title} | Kaptas Global Blog`}
+        title={`${plainTitle} | Kaptas Global Blog`}
         description={plainExcerpt.slice(0, 160)}
         canonical={`https://kaptasglobal.io/blog/${post.slug}`}
         ogImage={post.featured_image || undefined}
-        schemas={[articleSchema, organizationSchema]}
+        schemas={[organizationSchema, articleSchema, breadcrumbSchema]}
       />
 
       {/* Hero */}
