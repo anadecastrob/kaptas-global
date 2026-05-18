@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://kaptasglobal.io/sitemap.xml
-Host: https://kaptasglobal.io
