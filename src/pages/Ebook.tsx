@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, BookOpen, CheckCircle2, FileText, Clock, DollarSign, Users, Globe } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, FileText, Clock, DollarSign, Users, Globe } from "lucide-react";
 import { SEO } from "../components/SEO";
 import { AEOContent } from "../components/AEOContent";
 import { organizationSchema, buildBreadcrumbSchema, SITE_URL, ORG_ID } from "../data/seoSchemas";
 import { AEO_PARAGRAPHS } from "../data/aeoContent";
 
 /**
- * Filename for the gated PDF. Drop the PDF at:
- *   public/downloads/kg-smart-guide-hiring-brazilian-engineers.pdf
- * No other code change is required when the file is updated — keep the
- * filename stable so backlinks and the download trigger keep working.
+ * The ebook is hosted on Gamma (not a downloadable PDF). After a successful
+ * form submission, we open this URL in a new tab — preserving the Kaptas
+ * Global page for follow-up CTAs while delivering the gated resource.
+ * If you change the canonical hosting (e.g. move to a self-hosted page),
+ * only this constant needs to change.
  */
-const PDF_PATH = "/downloads/kg-smart-guide-hiring-brazilian-engineers.pdf";
+const EBOOK_URL = "https://ebook-22gajw1.gamma.site/";
 const EBOOK_TITLE = "The Smart Guide to Hiring Brazilian Engineers";
 const EBOOK_SUBTITLE = "A founder's playbook for hiring senior remote engineering talent in Brazil — costs, contract models, vetting, and the operational reality of running a nearshore engineering team in 2026.";
 
@@ -100,14 +101,11 @@ export default function Ebook() {
       const data = await res.json();
       if (data.success) {
         setDownloaded(true);
-        // Trigger the download in the same tab via an anchor click — works
-        // across modern browsers without popup-blocker false positives.
-        const link = document.createElement("a");
-        link.href = PDF_PATH;
-        link.setAttribute("download", "Kaptas-Global-Smart-Guide-Hiring-Brazilian-Engineers.pdf");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Open the hosted ebook in a new tab. window.open right after the
+        // awaited fetch can be popup-blocker-flagged in some browsers; the
+        // visible "Open the guide" button in the thank-you state is the
+        // reliable fallback if the tab does not appear.
+        window.open(EBOOK_URL, "_blank", "noopener,noreferrer");
       } else {
         setError(data.message || "Something went wrong. Please email us at support@kaptasglobal.io and we will send the guide.");
       }
@@ -121,8 +119,8 @@ export default function Ebook() {
   return (
     <>
       <SEO
-        title="The Smart Guide to Hiring Brazilian Engineers — Free PDF | Kaptas Global"
-        description="Free downloadable guide for founders and CTOs hiring senior remote engineers in Brazil. Costs, contract models (CLT, PJ, EOR), vetting, time zone reality, common pitfalls. 2026 edition."
+        title="The Smart Guide to Hiring Brazilian Engineers — Free Guide | Kaptas Global"
+        description="Free interactive guide for founders and CTOs hiring senior remote engineers in Brazil. Costs, contract models (CLT, PJ, EOR), vetting, time zone reality, common pitfalls. 2026 edition."
         keywords="hiring brazilian engineers guide, hire brazil developers ebook, CLT PJ EOR guide, nearshore brazil hiring guide, brazilian developer salary guide, kaptas global ebook"
         canonical="https://kaptasglobal.io/ebook"
         schemas={[organizationSchema, ebookSchema, ebookBreadcrumb]}
@@ -165,7 +163,7 @@ export default function Ebook() {
                     <BookOpen className="w-3 h-3 text-kaptas-green" strokeWidth={2} />
                   </div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-kaptas-green">
-                    Free PDF · 2026 Edition
+                    Free Guide · 2026 Edition
                   </span>
                 </div>
 
@@ -287,16 +285,16 @@ export default function Ebook() {
                   disabled={isSubmitting}
                   className="mt-2 bg-kaptas-green text-kaptas-black px-5 py-3 rounded-lg border border-kaptas-green text-sm font-semibold hover:brightness-90 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-[0_0_18px_var(--color-kaptas-green)] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending you the guide…" : (
+                  {isSubmitting ? "Opening your guide…" : (
                     <>
-                      <Download className="w-4 h-4" />
-                      Download the guide
+                      <BookOpen className="w-4 h-4" />
+                      Get the guide
                     </>
                   )}
                 </button>
 
                 <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                  We use your details to send the guide and the occasional follow-up if relevant.
+                  We use your details to unlock the guide and the occasional follow-up if relevant.
                   See our <Link to="/privacy-policy" className="underline hover:text-kaptas-green">Privacy Policy</Link>.
                 </p>
               </form>
@@ -307,24 +305,25 @@ export default function Ebook() {
                 transition={{ duration: 0.5 }}
                 className="p-7 border border-kaptas-green/30 bg-kaptas-green/[0.05] rounded-2xl backdrop-blur-sm"
               >
-                <div className="flex items-start gap-3 mb-3">
+                <div className="flex items-start gap-3 mb-5">
                   <CheckCircle2 className="w-6 h-6 text-kaptas-green shrink-0 mt-0.5" strokeWidth={2} />
                   <div>
-                    <h2 className="text-white font-bold text-lg mb-1">Your download is starting</h2>
+                    <h2 className="text-white font-bold text-lg mb-1">Your guide is ready</h2>
                     <p className="text-sm text-gray-400 leading-relaxed">
-                      If the file does not open automatically,{" "}
-                      <a
-                        href={PDF_PATH}
-                        download
-                        className="text-kaptas-green underline hover:no-underline"
-                      >
-                        click here to download
-                      </a>
-                      . We also sent a copy to your inbox.
+                      The guide opens in a new tab. If it did not open automatically, use the button below.
                     </p>
                   </div>
                 </div>
-                <div className="mt-5 pt-5 border-t border-white/10">
+                <a
+                  href={EBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-kaptas-green text-kaptas-black px-5 py-3 rounded-lg border border-kaptas-green text-sm font-semibold hover:brightness-90 transition-all duration-300 inline-flex items-center gap-2 hover:shadow-[0_0_18px_var(--color-kaptas-green)]"
+                >
+                  Open the guide
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <div className="mt-6 pt-5 border-t border-white/10">
                   <p className="text-sm text-gray-400 mb-3">While you have a moment:</p>
                   <div className="flex flex-wrap gap-2">
                     <Link
