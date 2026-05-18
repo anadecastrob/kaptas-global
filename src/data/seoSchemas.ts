@@ -2,10 +2,11 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Kaptas Global",
-  "legalName": "Kaptas Global LLC",
+  "legalName": "HR Technology LLC",
+  "alternateName": ["Kaptas Global", "HR Technology LLC d/b/a Kaptas Global"],
   "url": "https://kaptasglobal.io",
   "logo": "https://kaptasglobal.io/logo-branco.png",
-  "description": "Kaptas Global is a recruitment company that connects US-based companies with pre-vetted Brazilian professionals. Services include Direct Hire, Outsourcing and Staffing, Executive Mapping, and Hire in Brazil.",
+  "description": "Kaptas Global is a recruitment company that connects US-based companies with pre-vetted Brazilian professionals. Services include Direct Hire, Outsourcing and Staffing, Executive Mapping, and Hire in Brazil. Kaptas Global is the trade name of HR Technology LLC, a US-incorporated Florida limited liability company.",
   "foundingDate": "2024",
   "founder": [
     { "@type": "Person", "name": "Rodolfo Chaves" },
