@@ -5,13 +5,19 @@
     { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true },
 
     { "source": "/blog/category/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/category/:path*/", "destination": "/blog", "permanent": true },
     { "source": "/blog/tag/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/tag/:path*/", "destination": "/blog", "permanent": true },
 
     { "source": "/blog/author/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/author/:path*/", "destination": "/blog", "permanent": true },
 
     { "source": "/blog/2024/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/2024/:path*/", "destination": "/blog", "permanent": true },
     { "source": "/blog/2025/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/2025/:path*/", "destination": "/blog", "permanent": true },
     { "source": "/blog/2026/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/2026/:path*/", "destination": "/blog", "permanent": true },
 
     { "source": "/blog/page/:num", "destination": "/blog", "permanent": true },
     { "source": "/blog/page/:num/", "destination": "/blog", "permanent": true },
@@ -23,6 +29,7 @@
     { "source": "/feed", "destination": "/blog", "permanent": true },
     { "source": "/feed/", "destination": "/blog", "permanent": true },
     { "source": "/feed/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/feed/:path*/", "destination": "/blog", "permanent": true },
     { "source": "/rss", "destination": "/blog", "permanent": true },
     { "source": "/rss/", "destination": "/blog", "permanent": true },
     { "source": "/atom", "destination": "/blog", "permanent": true },
@@ -31,10 +38,13 @@
     { "source": "/comments/feed/", "destination": "/blog", "permanent": true },
 
     { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*/", "destination": "/", "permanent": true },
     { "source": "/wp-includes/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-includes/:path*/", "destination": "/", "permanent": true },
     { "source": "/wp-admin", "destination": "/", "permanent": true },
     { "source": "/wp-admin/", "destination": "/", "permanent": true },
     { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/:path*/", "destination": "/", "permanent": true },
     { "source": "/wp-login.php", "destination": "/", "permanent": true },
     { "source": "/xmlrpc.php", "destination": "/", "permanent": true },
 
@@ -49,10 +59,15 @@
     { "source": "/dedicated-tech-recruiter-bpo/", "destination": "/contractor-staffing", "permanent": true },
 
     { "source": "/frontend/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/frontend/:path*/", "destination": "/contractor-staffing", "permanent": true },
     { "source": "/backend/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/backend/:path*/", "destination": "/contractor-staffing", "permanent": true },
     { "source": "/mobile/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/mobile/:path*/", "destination": "/contractor-staffing", "permanent": true },
     { "source": "/data/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/data/:path*/", "destination": "/contractor-staffing", "permanent": true },
     { "source": "/devops/:path*", "destination": "/contractor-staffing", "permanent": true },
+    { "source": "/devops/:path*/", "destination": "/contractor-staffing", "permanent": true },
 
     { "source": "/mapping-service", "destination": "/executive-mapping", "permanent": true },
     { "source": "/mapping-service/", "destination": "/executive-mapping", "permanent": true },
