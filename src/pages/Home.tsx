@@ -28,7 +28,7 @@ export default function Home() {
       />
       <AEOContent paragraph={AEO_PARAGRAPHS.home} label="Kaptas Global overview" />
       <Hero />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <WhyBrazil />
       <Differentiation />
       
