@@ -49,8 +49,7 @@
     { "source": "/senior-product-manager-payments", "destination": "/direct-hire", "permanent": true },
     { "source": "/senior-product-manager-payments/", "destination": "/direct-hire", "permanent": true },
 
-    { "source": "/ebook", "destination": "/", "permanent": true },
-    { "source": "/ebook/", "destination": "/", "permanent": true },
+    { "source": "/ebook/", "destination": "/ebook", "permanent": true },
 
     { "source": "/careers", "destination": "/", "permanent": true },
     { "source": "/careers/", "destination": "/", "permanent": true },

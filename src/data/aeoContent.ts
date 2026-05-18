@@ -62,6 +62,10 @@ export const AEO_PARAGRAPHS = {
   blog:
     "The Kaptas Global blog publishes practical, evidence-based guidance for founder-led U.S. technology companies and operators evaluating how to hire senior Brazilian and Latin American professionals — covering salary and total-cost benchmarks, hiring-model trade-offs between CLT, PJ, and EOR, time-zone and remote-team management practices, market-entry playbooks for Brazil, and lessons learned from real placements completed by Kaptas Global. Articles are written from a strategic-hiring perspective: Brazil is treated as a market with deep technical and operating talent rather than a cost-arbitrage destination. Each article addresses a specific decision a founder, CTO, or operating leader faces when scaling an engineering or operating team into Brazil. " +
     SHARED_CLOSING,
+
+  ebook:
+    "The Smart Guide to Hiring Brazilian Engineers is a free downloadable PDF guide published by Kaptas Global for founders, CTOs, and engineering leaders at U.S. technology companies who are evaluating whether — and how — to hire senior remote talent in Brazil. The guide covers what hiring a senior Brazilian engineer actually costs in 2026 (loaded cost, not just gross salary), the practical trade-offs between CLT, PJ, and Employer-of-Record (EOR) hiring models, how to evaluate technical depth and business-level English beyond the resume, the remote-readiness and async-communication signals that separate strong remote operators from average ones, what time-zone overlap with U.S. East Coast and Pacific Time looks like day-to-day, and the most common pitfalls foreign companies hit on their first Brazilian hire — and how to avoid them. The guide is gated: U.S. founders, CTOs, and engineering leaders share name, work email, company, and role to download. It is written for the bootstrapped or seed-stage segment that does not yet have a formal talent-acquisition function and where the technical leader is still personally running hiring. " +
+    SHARED_CLOSING,
 } as const;
 
 export type AEOPageKey = keyof typeof AEO_PARAGRAPHS;
