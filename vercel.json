@@ -5,12 +5,38 @@
     { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true },
 
     { "source": "/blog/category/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/blog/tag/:path*", "destination": "/blog", "permanent": true },
 
     { "source": "/blog/author/:path*", "destination": "/blog", "permanent": true },
 
     { "source": "/blog/2024/:path*", "destination": "/blog", "permanent": true },
     { "source": "/blog/2025/:path*", "destination": "/blog", "permanent": true },
     { "source": "/blog/2026/:path*", "destination": "/blog", "permanent": true },
+
+    { "source": "/blog/page/:num", "destination": "/blog", "permanent": true },
+    { "source": "/blog/page/:num/", "destination": "/blog", "permanent": true },
+    { "source": "/blog/:slug/feed", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/blog/:slug/feed/", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/blog/feed", "destination": "/blog", "permanent": true },
+    { "source": "/blog/feed/", "destination": "/blog", "permanent": true },
+
+    { "source": "/feed", "destination": "/blog", "permanent": true },
+    { "source": "/feed/", "destination": "/blog", "permanent": true },
+    { "source": "/feed/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/rss", "destination": "/blog", "permanent": true },
+    { "source": "/rss/", "destination": "/blog", "permanent": true },
+    { "source": "/atom", "destination": "/blog", "permanent": true },
+    { "source": "/atom/", "destination": "/blog", "permanent": true },
+    { "source": "/comments/feed", "destination": "/blog", "permanent": true },
+    { "source": "/comments/feed/", "destination": "/blog", "permanent": true },
+
+    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-includes/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-admin", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true },
+    { "source": "/xmlrpc.php", "destination": "/", "permanent": true },
 
     { "source": "/direct-hire-services", "destination": "/direct-hire", "permanent": true },
     { "source": "/direct-hire-services/", "destination": "/direct-hire", "permanent": true },
@@ -80,9 +106,6 @@
 
     { "source": "/calculator", "destination": "/pricing", "permanent": true },
     { "source": "/calculator/", "destination": "/pricing", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
