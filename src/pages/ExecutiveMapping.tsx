@@ -301,7 +301,7 @@ export default function ExecutiveMapping() {
 
       {/* Clients / Social Proof */}
       <div className="-mt-[50px] relative z-10">
-        <SocialProof />
+        {/* <SocialProof /> */}
       </div>
 
       {/* 2. Mapping Report Section */}

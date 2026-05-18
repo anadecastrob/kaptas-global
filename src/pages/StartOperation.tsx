@@ -309,7 +309,7 @@ export default function StartOperation() {
 
       {/* Clients / Social Proof */}
       <div className="-mt-[50px] relative z-10">
-        <SocialProof />
+        {/* <SocialProof /> */}
       </div>
 
       {/* 2. Consultative Hiring Loop */}

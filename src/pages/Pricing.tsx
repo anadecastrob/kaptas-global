@@ -228,7 +228,7 @@ export default function Pricing() {
       </div>
 
       {/* 5. Stats strip + Logo bar */}
-      <SocialProof />
+      {/* <SocialProof /> */}
 
       {/* 3. Tailored services */}
       <motion.section {...fadeIn} className="px-6 md:px-12 max-w-7xl mx-auto w-full relative">
