@@ -15,17 +15,18 @@ const sections = [
   { id: "user-conduct", label: "5. Acceptable Use" },
   { id: "intellectual-property", label: "6. Intellectual Property" },
   { id: "candidate-content", label: "7. Candidate Information and Confidentiality" },
-  { id: "third-party", label: "8. Third-Party Services and Links" },
-  { id: "fees", label: "9. Fees and Payment" },
-  { id: "warranties", label: "10. Disclaimers of Warranties" },
-  { id: "liability", label: "11. Limitation of Liability" },
-  { id: "indemnification", label: "12. Indemnification" },
-  { id: "term-termination", label: "13. Term and Termination" },
-  { id: "governing-law", label: "14. Governing Law" },
-  { id: "disputes", label: "15. Dispute Resolution and Arbitration" },
-  { id: "modifications", label: "16. Modifications to These Terms" },
-  { id: "miscellaneous", label: "17. Miscellaneous" },
-  { id: "contact", label: "18. Contact" },
+  { id: "non-circumvention", label: "8. Candidate Non-Circumvention" },
+  { id: "third-party", label: "9. Third-Party Services and Links" },
+  { id: "fees", label: "10. Fees and Payment" },
+  { id: "warranties", label: "11. Disclaimers of Warranties" },
+  { id: "liability", label: "12. Limitation of Liability" },
+  { id: "indemnification", label: "13. Indemnification" },
+  { id: "term-termination", label: "14. Term and Termination" },
+  { id: "governing-law", label: "15. Governing Law" },
+  { id: "disputes", label: "16. Dispute Resolution and Arbitration" },
+  { id: "modifications", label: "17. Modifications to These Terms" },
+  { id: "miscellaneous", label: "18. Miscellaneous" },
+  { id: "contact", label: "19. Contact" },
 ];
 
 const termsSchema = {
@@ -188,20 +189,57 @@ export default function TermsOfService() {
               You may not share candidate information with third parties (other than your employees and advisors with a need to know) without the candidate's prior written consent. The processing of candidate personal information is also governed by our <Link to="/privacy-policy">Privacy Policy</Link> and by data-protection laws including the LGPD, GDPR, and CCPA/CPRA.
             </p>
 
-            <h2 id="third-party">8. Third-Party Services and Links</h2>
+            <h2 id="non-circumvention">8. Candidate Non-Circumvention</h2>
+
+            <h3>8.1 Introduced Candidates</h3>
+            <p>
+              An <strong>"Introduced Candidate"</strong> is any individual whose name, contact information, professional profile, resume, screening notes, market-mapping data, or any portion thereof Kaptas Global has disclosed, presented, or otherwise made available to Client in connection with the Site or any actual or prospective Service. The introduction is effective on the first date any such information is shared with Client, regardless of medium (email, document, call notes, platform, or otherwise) and regardless of whether the Introduced Candidate is ultimately presented for a specific role.
+            </p>
+
+            <h3>8.2 Restriction Period</h3>
+            <p>
+              For a period of <strong>twelve (12) months</strong> following the date of first introduction of an Introduced Candidate (the <strong>"Restriction Period"</strong>), Client shall not, directly or indirectly — and shall cause its affiliates, subsidiaries, parent companies, and entities under common control not to — (i)&nbsp;hire, employ, engage, retain, or otherwise compensate the Introduced Candidate as an employee, contractor, consultant, advisor, board member, fractional executive, or in any other capacity; (ii)&nbsp;enter into any staffing, employer-of-record, agency, or contracting arrangement that places the Introduced Candidate on Client's team through a third party; or (iii)&nbsp;refer, recommend, or introduce the Introduced Candidate to any third party for the purpose of being hired or engaged by that third party.
+            </p>
+
+            <h3>8.3 Permitted Engagements</h3>
+            <p>
+              The Restriction Period does not apply to placements executed through Kaptas Global under a signed Service Agreement with all applicable fees paid. The Restriction Period also does not apply where Client can demonstrate, with written records, that it had an active and documented relationship with the individual <em>prior to</em> Kaptas Global's first introduction.
+            </p>
+
+            <h3>8.4 Circumvention Fee</h3>
+            <p>
+              If Client breaches Section&nbsp;8.2, Client shall pay Kaptas Global a fee (the <strong>"Circumvention Fee"</strong>) equal to <strong>thirty percent (30%) of the Introduced Candidate's annualized total compensation</strong> — including base compensation, target bonuses, the fair market value of equity granted, and the cash value of recurring benefits — measured as of the date the Introduced Candidate begins providing services to Client or any of its affiliates, with a minimum Circumvention Fee of <strong>ten thousand U.S. dollars (USD&nbsp;10,000)</strong>. The Circumvention Fee is due within fifteen (15)&nbsp;calendar days of Kaptas Global's invoice. Unpaid amounts accrue interest at the maximum rate permitted by applicable law, and Client is responsible for the reasonable collection costs Kaptas Global incurs, including attorneys' fees.
+            </p>
+
+            <h3>8.5 Liquidated Damages, Not a Penalty</h3>
+            <p>
+              The parties acknowledge that the actual damages caused by circumvention are difficult to ascertain with precision, and that the Circumvention Fee represents a reasonable and good-faith pre-estimate of Kaptas Global's likely loss — including direct placement revenue, sunk sourcing and screening cost, lost repeat-placement opportunity, and damage to candidate-network goodwill. The Circumvention Fee is not, and is not intended to be, a penalty. If any court of competent jurisdiction determines that the stated amount is unenforceable in part, it shall be reduced to the maximum amount permitted by law and the remainder of this Section shall remain in full force.
+            </p>
+
+            <h3>8.6 Cooperation and Verification</h3>
+            <p>
+              During the Restriction Period and for six (6)&nbsp;months thereafter, Client shall, upon reasonable written request from Kaptas Global, confirm in writing whether it or any of its affiliates has hired, engaged, or otherwise compensated a specific Introduced Candidate, and provide reasonable supporting documentation. Client shall maintain accurate internal records of its hiring decisions during the Restriction Period sufficient to permit such verification.
+            </p>
+
+            <h3>8.7 Survival</h3>
+            <p>
+              This Section&nbsp;8 survives the termination, expiration, or rescission of these Terms and of any Service Agreement, for the full duration of the Restriction Period applicable to each Introduced Candidate.
+            </p>
+
+            <h2 id="third-party">9. Third-Party Services and Links</h2>
             <p>
               The Site and Services may reference, embed, or link to third-party websites, products, or services. We do not control and are not responsible for the content, policies, or practices of third parties. Your use of any third-party service is at your own risk and is governed by the third party's own terms and privacy notices.
             </p>
 
-            <h2 id="fees">9. Fees and Payment</h2>
+            <h2 id="fees">10. Fees and Payment</h2>
             <p>
-              Fees, billing cadence, currency, taxes, and payment terms are defined in the applicable Service Agreement. Unless otherwise stated, all fees are quoted in <strong>U.S. Dollars (USD)</strong> and are exclusive of any sales, value-added, or similar taxes that may apply.
+              Fees, billing cadence, currency, applicable taxes, and payment terms are defined in the applicable Service Agreement and are exclusive of any sales, value-added, or similar taxes that may apply.
             </p>
             <p>
-              Late payments may accrue interest at the lesser of <strong>1.5% per month</strong> or the maximum rate permitted by applicable law. Client is responsible for collection costs, including reasonable attorneys' fees, incurred to recover amounts not paid when due.
+              Late payments may accrue interest at the maximum rate permitted by applicable law. Client is responsible for collection costs, including reasonable attorneys' fees, incurred to recover amounts not paid when due.
             </p>
 
-            <h2 id="warranties">10. Disclaimers of Warranties</h2>
+            <h2 id="warranties">11. Disclaimers of Warranties</h2>
             <p>
               <strong>The Site is provided on an "AS IS" and "AS AVAILABLE" basis.</strong> To the maximum extent permitted by law, Kaptas Global disclaims all warranties, whether express, implied, statutory, or otherwise, including any warranties of merchantability, fitness for a particular purpose, title, non-infringement, and any warranties arising from course of dealing or usage of trade.
             </p>
@@ -209,18 +247,18 @@ export default function TermsOfService() {
               We do not warrant that the Site will be uninterrupted, error-free, or free of harmful components. We make no warranty regarding any specific result that may be obtained from candidates or any third party. Hiring decisions are made by Client based on Client's own evaluation. Past performance of placements is not a guarantee of future results.
             </p>
 
-            <h2 id="liability">11. Limitation of Liability</h2>
+            <h2 id="liability">12. Limitation of Liability</h2>
             <p>
               <strong>To the maximum extent permitted by law, in no event shall Kaptas Global, its officers, directors, employees, agents, or affiliates be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to loss of profits, revenue, data, business opportunities, goodwill, or other intangible losses, arising out of or in connection with these Terms or the Services, even if advised of the possibility of such damages.</strong>
             </p>
             <p>
-              <strong>Kaptas Global's aggregate liability arising out of or in connection with the Site, the Services, or these Terms, regardless of the form of the action, shall not exceed the greater of (a) the total fees paid by Client to Kaptas Global in the twelve (12) months preceding the event giving rise to the claim, or (b) one thousand U.S. dollars (USD 1,000).</strong>
+              <strong>Kaptas Global's aggregate liability arising out of or in connection with the Site, the Services, or these Terms, regardless of the form of the action, shall not exceed the total fees paid by Client to Kaptas Global in the twelve (12) months preceding the event giving rise to the claim.</strong>
             </p>
             <p>
               Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law, including liability for fraud, gross negligence, or willful misconduct.
             </p>
 
-            <h2 id="indemnification">12. Indemnification</h2>
+            <h2 id="indemnification">13. Indemnification</h2>
             <p>
               You agree to defend, indemnify, and hold harmless Kaptas Global and its officers, directors, employees, agents, and affiliates from and against any third-party claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:
             </p>
@@ -231,7 +269,7 @@ export default function TermsOfService() {
               <li>any information you submit through the Site that is unlawful, false, or infringes any third-party right.</li>
             </ul>
 
-            <h2 id="term-termination">13. Term and Termination</h2>
+            <h2 id="term-termination">14. Term and Termination</h2>
             <p>
               These Terms remain in effect while you use the Site or any Service. Either party may terminate the relationship for material breach if the breach is not cured within thirty (30) days of written notice. Outsourcing &amp; Staffing and other recurring engagements may be terminated as set forth in the applicable Service Agreement.
             </p>
@@ -239,12 +277,12 @@ export default function TermsOfService() {
               Sections that by their nature should survive termination — including Intellectual Property, Confidentiality, Fees due before termination, Disclaimers, Limitation of Liability, Indemnification, Governing Law, and Dispute Resolution — will survive.
             </p>
 
-            <h2 id="governing-law">14. Governing Law</h2>
+            <h2 id="governing-law">15. Governing Law</h2>
             <p>
               These Terms and any dispute arising out of or related to these Terms or the Services are governed by the laws of the <strong>State of Florida</strong>, United States, without regard to its conflict-of-laws principles. The United Nations Convention on Contracts for the International Sale of Goods does not apply.
             </p>
 
-            <h2 id="disputes">15. Dispute Resolution and Arbitration</h2>
+            <h2 id="disputes">16. Dispute Resolution and Arbitration</h2>
             <p>
               <strong>Informal resolution.</strong> Before initiating a formal proceeding, you and Kaptas Global agree to attempt to resolve any dispute through good-faith negotiation by contacting <a href="mailto:support@kaptasglobal.io">support@kaptasglobal.io</a>. If the dispute is not resolved within thirty (30) days, either party may proceed under the following clause.
             </p>
@@ -258,12 +296,12 @@ export default function TermsOfService() {
               <strong>Carve-outs.</strong> Either party may bring an action in court for injunctive or equitable relief to protect its intellectual property, confidential information, or business operations. Nothing in this Section limits any non-waivable statutory right.
             </p>
 
-            <h2 id="modifications">16. Modifications to These Terms</h2>
+            <h2 id="modifications">17. Modifications to These Terms</h2>
             <p>
               We may modify these Terms from time to time. The "Last Updated" date at the top reflects when changes were made. If a change is material, we will provide reasonable advance notice, either through the Site or, where appropriate, by email. Your continued use of the Site or Services after the effective date of a change constitutes your acceptance of the revised Terms.
             </p>
 
-            <h2 id="miscellaneous">17. Miscellaneous</h2>
+            <h2 id="miscellaneous">18. Miscellaneous</h2>
             <ul>
               <li><strong>Entire agreement.</strong> These Terms, together with the Privacy Policy and any applicable Service Agreement, constitute the entire agreement between you and Kaptas Global regarding the subject matter and supersede all prior or contemporaneous communications and proposals.</li>
               <li><strong>Severability.</strong> If any provision is found unenforceable, the remaining provisions remain in full force.</li>
@@ -274,7 +312,7 @@ export default function TermsOfService() {
               <li><strong>Notices.</strong> Legal notices to Kaptas Global must be sent to <a href="mailto:legal@kaptasglobal.io">legal@kaptasglobal.io</a> and to the address in Section&nbsp;1, with a copy delivered by reputable courier.</li>
             </ul>
 
-            <h2 id="contact">18. Contact</h2>
+            <h2 id="contact">19. Contact</h2>
             <p>
               For questions about these Terms, contact us at:
             </p>
