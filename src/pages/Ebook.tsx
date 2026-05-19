@@ -100,6 +100,20 @@ export default function Ebook() {
       });
       const data = await res.json();
       if (data.success) {
+        // GA4 lead conversion via GTM dataLayer. Same shape as the contact
+        // form (useContactForm.ts) so GTM only needs one tag + trigger.
+        // form_type='ebook' lets GA4 separate top-of-funnel lead magnet
+        // captures from bottom-of-funnel book-a-call submissions.
+        if (typeof window !== "undefined") {
+          const w = window as unknown as { dataLayer?: Array<Record<string, unknown>> };
+          w.dataLayer = w.dataLayer || [];
+          w.dataLayer.push({
+            event: "lead_form_submit",
+            form_source: "ebook",
+            form_type: "ebook",
+          });
+        }
+
         setDownloaded(true);
         // Open the hosted ebook in a new tab. window.open right after the
         // awaited fetch can be popup-blocker-flagged in some browsers; the

@@ -46,6 +46,22 @@ export function useContactForm(source: string) {
       });
       const data = await res.json();
       if (data.success) {
+        // GA4 lead conversion via GTM dataLayer.
+        // form_source is derived from the current pathname so it stays correct
+        // when this hook is reused on new pages, without the caller having to
+        // remember to update the `source` prop.
+        if (typeof window !== "undefined") {
+          const w = window as unknown as { dataLayer?: Array<Record<string, unknown>> };
+          w.dataLayer = w.dataLayer || [];
+          const path = window.location.pathname;
+          const formSource = path === "/" ? "home" : (path.split("/").filter(Boolean)[0] || "home");
+          w.dataLayer.push({
+            event: "lead_form_submit",
+            form_source: formSource,
+            form_type: "contact",
+          });
+        }
+
         setShowModal(true);
         setForm({ name: "", company: "", email: "", message: "" });
       } else {
