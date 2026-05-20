@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { fadeIn, staggerContainer, staggerItem } from "./animations";
 import blogPosts from "../../data/blog-posts.json";
+import { formatDateShort } from "../../lib/utils";
 
 const ACCENT_COLORS = ["kaptas-green", "kaptas-purple", "neon-blue"];
 
@@ -67,7 +68,7 @@ export function BlogInsights() {
                 <div className="flex items-center gap-3 mb-3">
                   <span className={`text-xs font-mono text-${color} uppercase tracking-wider`}>{category}</span>
                   <span className="text-gray-600 text-xs">•</span>
-                  <span className="text-gray-500 text-xs">{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                  <span className="text-gray-500 text-xs">{formatDateShort(post.date)}</span>
                 </div>
                 <h3
                   className={`text-xl font-semibold text-white mb-3 group-hover:text-${color} transition-colors`}

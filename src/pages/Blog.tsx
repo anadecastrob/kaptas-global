@@ -8,6 +8,7 @@ import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import blogPosts from "../data/blog-posts.json";
 import { useContactForm } from "../hooks/useContactForm";
 import { ThankYouModal } from "../components/ThankYouModal";
+import { formatDateShort } from "../lib/utils";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -98,11 +99,7 @@ export default function Blog() {
               .replace(/<[^>]+>/g, "")
               .replace(/\[&hellip;\]|\[&#8230;\]/g, "…")
               .trim();
-            const dateFormatted = new Date(post.date).toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            });
+            const dateFormatted = formatDateShort(post.date);
 
             return (
               <motion.article

@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { SEO } from "../components/SEO";
 import { organizationSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
 import blogPosts from "../data/blog-posts.json";
+import { formatDateLong } from "../lib/utils";
 
 const NAMED_ENTITIES: Record<string, string> = {
   amp: "&",
@@ -39,11 +40,7 @@ export default function BlogPost() {
   if (!post) return <Navigate to="/blog" replace />;
 
   const category = post.categories[0] || "Blog";
-  const dateFormatted = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const dateFormatted = formatDateLong(post.date);
 
   const plainTitle = stripHtml(post.title);
   const plainExcerpt = stripHtml(post.excerpt).replace(/\[\.\.\.\]$/, "").trim();
