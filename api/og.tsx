@@ -24,22 +24,40 @@ export const config = { runtime: "edge" };
  * once at cold start and reused across warm invocations.
  */
 
+// Satori (the renderer inside @vercel/og) only supports TrueType-flavored
+// fonts wrapped as TTF or WOFF. Inter's own .otf releases are CFF-flavored
+// OpenType, which fails to parse with "Unsupported OpenType ..." Use the
+// WOFF (TrueType-outlined) builds shipped by @fontsource via jsDelivr.
 const FONT_REGULAR_URL =
-  "https://cdn.jsdelivr.net/gh/rsms/inter@v4.0/docs/font-files/Inter-Regular.otf";
+  "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.20/files/inter-latin-400-normal.woff";
 const FONT_BOLD_URL =
-  "https://cdn.jsdelivr.net/gh/rsms/inter@v4.0/docs/font-files/Inter-Bold.otf";
+  "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.20/files/inter-latin-700-normal.woff";
 const LOGO_URL = "https://kaptasglobal.io/logo-branco.png";
 
 // Module-scope: fetched once at cold start, reused across warm invocations.
-const fontRegularPromise = fetch(FONT_REGULAR_URL).then((r) => r.arrayBuffer());
-const fontBoldPromise = fetch(FONT_BOLD_URL).then((r) => r.arrayBuffer());
-const logoPromise = fetch(LOGO_URL)
-  .then((r) => r.arrayBuffer())
-  .then((buf) => {
-    // Convert to data URL so Satori can render <img> without a re-fetch per request.
-    const base64 = Buffer.from(buf).toString("base64");
-    return `data:image/png;base64,${base64}`;
-  });
+// Wrap each fetch so a failed download surfaces as a real error rather than
+// a silent zero-byte buffer (which Satori would then render as a blank PNG).
+async function fetchBinary(url: string, kind: string): Promise<ArrayBuffer> {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`${kind} fetch failed: HTTP ${res.status} for ${url}`);
+  }
+  const buf = await res.arrayBuffer();
+  if (buf.byteLength < 1000) {
+    throw new Error(
+      `${kind} fetch returned suspiciously small body (${buf.byteLength}B) for ${url}`,
+    );
+  }
+  return buf;
+}
+
+const fontRegularPromise = fetchBinary(FONT_REGULAR_URL, "Inter Regular");
+const fontBoldPromise = fetchBinary(FONT_BOLD_URL, "Inter Bold");
+const logoPromise = fetchBinary(LOGO_URL, "Logo").then((buf) => {
+  // Convert to data URL so Satori can render <img> without a re-fetch per request.
+  const base64 = Buffer.from(buf).toString("base64");
+  return `data:image/png;base64,${base64}`;
+});
 
 function truncate(text: string, max: number): string {
   if (text.length <= max) return text;
