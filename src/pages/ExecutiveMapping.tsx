@@ -80,6 +80,9 @@ export default function ExecutiveMapping() {
         description="Kaptas Global maps 20-30 leadership professionals for your target role in Brazil and Latin America. Competitor compensation analysis, team structures, salary benchmarks, and a ranked shortlist of top candidates. Delivered in 10-15 business days."
         keywords="executive mapping Brazil, executive talent mapping Latin America, leadership hiring Brazil, competitor compensation analysis Brazil, C-level salary benchmarks Brazil, talent intelligence Brazil, hire country manager Brazil, executive search Brazil, Kaptas Global, talent mapping Latin America"
         canonical="https://kaptasglobal.io/executive-mapping"
+        eyebrow="Executive Mapping"
+        ogTitle="Map the Leadership Market in Brazil"
+        ogSubtitle="Competitor comp, team structures, ranked shortlist. 10-15 business days."
         schemas={[
           organizationSchema,
           executiveMappingServiceSchema,

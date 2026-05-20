@@ -89,6 +89,9 @@ export default function ContractorStaffing() {
         description="Kaptas Global helps US companies hire senior remote professionals in Brazil and Latin America. We handle sourcing, payroll, and compliance. Zero upfront cost. 14-day average time to hire. Full IP ownership. One monthly invoice in USD."
         keywords="outsourcing staffing Brazil, hire remote talent Latin America, nearshore hiring Brazil, contractor payroll Brazil, hire engineers Brazil, Kaptas Global, nearshore staffing, remote professionals Latin America, IP ownership contractor Brazil"
         canonical="https://kaptasglobal.io/contractor-staffing"
+        eyebrow="Outsourcing & Staffing"
+        ogTitle="Senior Remote Talent from Brazil"
+        ogSubtitle="Flat monthly cost per pro. Sourcing, payroll, compliance handled. USD invoice."
         schemas={[
           organizationSchema,
           outsourcingServiceSchema,

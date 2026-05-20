@@ -53,6 +53,9 @@ export default function Blog() {
         description="Actionable advice for startup founders and engineering leaders hiring in Brazil. Salary guides, hiring models, market insights, and compliance tips."
         keywords="hiring in brazil blog, nearshore hiring insights, brazil developer salary, latam hiring guide, kaptas global blog"
         canonical="https://kaptasglobal.io/blog"
+        eyebrow="Blog"
+        ogTitle="Insights on Hiring in Brazil & LatAm"
+        ogSubtitle="Salary guides, hiring models, market insights, compliance tips. For founders and engineering leaders."
         schemas={[
           organizationSchema,
           buildBreadcrumbSchema([
