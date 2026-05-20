@@ -1,0 +1,65 @@
+# Kaptas Global
+
+> Kaptas Global is a US-incorporated strategic hiring partner (legal entity: HR Technology LLC, Florida, USA) that helps founder-led U.S. technology companies hire senior remote engineering and operating talent in Brazil and Latin America. Founded 2024 by Rodolfo Chaves and Henry Novaes. 300+ placements, 100+ clients, 75% repeat-client rate.
+
+## What Kaptas does
+
+Four services, transparent pricing, no retainers:
+
+- **Direct Hire** — One-time placement fee of 18% of first-year compensation. Paid only after successful hire. 90-180 day replacement guarantee included.
+- **Outsourcing & Staffing** — Flat monthly cost per professional, billed as a single USD invoice. Covers salary, full Brazilian employment compliance, payroll, and unlimited replacements. Example: Senior Full-Stack Engineer $4,000-$6,000/month fully loaded. Client retains full IP ownership.
+- **Executive Mapping** — Research-grade market intelligence report including competitor compensation, team structures, salary benchmarks, and a ranked shortlist of leadership candidates. Delivered in 10-15 business days as a standalone product.
+- **Hire in Brazil** — Market-entry consulting for companies opening Brazilian operations. Compensation analysis, hiring-model recommendation (CLT vs PJ vs EOR), and first-hire support.
+
+## Who Kaptas serves
+
+US-based tech startups and scaleups, typically:
+- Pre-seed, seed, or bootstrapped — cost-conscious, fast-moving
+- 1-100 employees, remote-first culture, no formal talent-acquisition function
+- Decision-makers: Founders, CEOs, CTOs, VP/Head of Engineering
+- Hiring engineering, data, AI/ML, QA, DevOps, product, or technical leadership roles
+- Want to hire in Brazil without setting up a local entity
+
+Secondary: European companies, companies entering Brazil for market entry, accounts that need market mapping before deciding on a hire.
+
+## Why Brazil
+
+Brazilian professionals offer 40-60% lower total compensation vs. equivalent US hires at the same seniority. Brazil GMT-3 timezone provides 5-8 hours of daily overlap with US teams. 1.5M+ tech graduates, growing bilingual senior talent pool. Engineering ecosystem supporting global tech operations since 2005.
+
+## Core pages
+
+- [Pricing](https://kaptasglobal.io/pricing): Full pricing for all four services
+- [Direct Hire](https://kaptasglobal.io/direct-hire): One-time 18% placement fee, 90-180 day replacement guarantee
+- [Outsourcing & Staffing](https://kaptasglobal.io/contractor-staffing): Flat monthly cost, USD invoicing, full compliance handled
+- [Executive Mapping](https://kaptasglobal.io/executive-mapping): Market intelligence report in 10-15 business days
+- [Hire in Brazil](https://kaptasglobal.io/hire-in-brazil): Market-entry consulting for first hires in Brazil
+- [Free ebook: Hiring in Brazil](https://kaptasglobal.io/ebook)
+
+## Key resources
+
+- [Brazil hiring costs 2025 — total cost guide](https://kaptasglobal.io/blog/brazil-hiring-costs-2025-total-cost-guide)
+- [Why Brazilian developers for US startups](https://kaptasglobal.io/blog/brazilian-developers-for-us-startups)
+- [H1B explained — what the new $100k fee means for hiring](https://kaptasglobal.io/blog/h1b-explained-new-100000-fee-guide)
+- [Hiring software engineers in Brazil — complete guide](https://kaptasglobal.io/blog/hiring-software-engineers-brazil-latam-complete-guide)
+- [Best hiring model for a remote Brazil team](https://kaptasglobal.io/blog/best-hiring-model-remote-team-brazil)
+- [Hiring models: PJ vs CLT in Brazil](https://kaptasglobal.io/blog/hiring-models-brazil-pj-vs-clt)
+- [Employer of record vs contractor (PJ) in Brazil](https://kaptasglobal.io/blog/employer-of-record-vs-contractor-pj-brazil)
+- [Where to find top tech talent in Brazil](https://kaptasglobal.io/blog/where-to-find-top-tech-talent-in-brazil)
+- [Salaries in Brazil for US remote teams 2026](https://kaptasglobal.io/blog/salaries-in-brazil-for-us-remote-teams-2026)
+- [Why Brazil's time zone fits US teams](https://kaptasglobal.io/blog/why-brazils-time-zone-is-an-ideal-fit-for-international-teams)
+- [Choose right LatAm country for nearshore engineering](https://kaptasglobal.io/blog/choose-right-latam-country-nearshore-engineering-pod)
+
+## Contact
+
+- Founder & CEO: Rodolfo Chaves — rodolfo@kaptasglobal.io
+- Co-Founder: Henry Novaes
+- Sales: support@kaptasglobal.io
+- Phone: +1-689-293-9252
+- LinkedIn: https://www.linkedin.com/company/kaptas-global/
+- Address: 7345 W Sand Lake Rd, Ste 210, OFC 460, Orlando FL 32819, USA
+
+## Optional
+
+- [Full blog index](https://kaptasglobal.io/blog)
+- [Terms of Service](https://kaptasglobal.io/terms-of-service)
+- [Privacy Policy](https://kaptasglobal.io/privacy-policy)
