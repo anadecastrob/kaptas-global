@@ -45,11 +45,12 @@ export function SEO({ title, description, keywords, canonical, ogImage, ogType =
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter Card */}
+      {/* twitter:site omitted intentionally — Kaptas does not maintain an X/Twitter account.
+          When/if an account is created, add: <meta name="twitter:site" content="@handle" /> */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:site" content="@KaptasGlobal" />
 
       {/* JSON-LD Schemas */}
       {schemas.map((schema, i) => (
