@@ -7,3 +7,7 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+/** Baked-in build year. See `define` in vite.config.ts. Used by Footer.tsx so
+ *  the copyright line is identical between prerender and client hydration. */
+declare const __BUILD_YEAR__: string;
