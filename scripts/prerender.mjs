@@ -159,32 +159,6 @@ for (const route of ALL_ROUTES) {
     // motion components to render their initial frame.
     await new Promise((r) => setTimeout(r, 250));
 
-    // Strip framer-motion's "animation finished" inline styles before
-    // capturing HTML. By the time we get here, motion has run its entrance
-    // animations on above-the-fold elements and left inline styles like
-    // `opacity: 1; transform: none;`. On first client render motion remounts
-    // every component in its `initial` state — opacity:0 etc. — and React's
-    // reconciler logs #418 for every mismatched style.
-    //
-    // Below-the-fold motion components (whileInView that hasn't fired) are
-    // still in their initial state (`opacity: 0; transform: translateY(20px);`)
-    // which MATCHES what the client will render, so we leave those alone.
-    //
-    // The signal "this style came from motion finishing an animation" is
-    // `transform: none` (a value no human writes) or a bare `opacity: 1`
-    // (motion writes this to mark a fade-in done). Removing those styles
-    // lets React hydrate cleanly — motion re-applies its initial state on
-    // mount, then animates normally on subsequent renders.
-    await page.evaluate(() => {
-      const POST_ANIMATION = /transform:\s*none|^\s*opacity:\s*1;?\s*$/i;
-      document.querySelectorAll("[style]").forEach((el) => {
-        const s = el.getAttribute("style") ?? "";
-        if (POST_ANIMATION.test(s)) {
-          el.removeAttribute("style");
-        }
-      });
-    });
-
     const html = await page.content();
 
     const isRoot = route === "/";
