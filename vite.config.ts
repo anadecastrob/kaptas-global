@@ -8,6 +8,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  define: {
+    // Baked into the bundle at build time so the rendered HTML is identical
+    // across the prerender pass (Puppeteer) and the user's browser. Computing
+    // `new Date().getFullYear()` inside a React component used to cause the
+    // React #418 hydration warnings on every page (Footer copyright line) —
+    // Puppeteer's V8 and the user's browser don't always agree near year
+    // boundaries or when system clocks drift.
+    __BUILD_YEAR__: JSON.stringify(String(new Date().getFullYear())),
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
