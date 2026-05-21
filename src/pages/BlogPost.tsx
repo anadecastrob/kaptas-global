@@ -74,7 +74,9 @@ export default function BlogPost() {
         title={`${plainTitle} | Kaptas Global Blog`}
         description={plainExcerpt.slice(0, 160)}
         canonical={`https://kaptasglobal.io/blog/${post.slug}`}
-        ogImage={post.featured_image || undefined}
+        eyebrow="Blog"
+        ogTitle={plainTitle}
+        ogSubtitle={plainExcerpt.slice(0, 140)}
         ogType="article"
         schemas={[organizationSchema, articleSchema, breadcrumbSchema]}
       />

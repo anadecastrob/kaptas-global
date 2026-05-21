@@ -24,6 +24,8 @@ export default function Home() {
         description="Hire senior Brazilian developers, engineers, and specialists for your US team. Outsourcing & Staffing, Direct Hire, Executive Mapping, and market entry support. 60% cost reduction, US timezone overlap, candidates in 5 days."
         keywords="hire developers brazil, outsourcing brazil, direct hire brazil, nearshore developers, employer of record brazil, brazil tech talent, cost to hire developers brazil, remote developers brazil, brazilian engineers, kaptas global"
         canonical="https://kaptasglobal.io/"
+        ogTitle="Hire Senior Brazilian Talent"
+        ogSubtitle="Outsourcing, Direct Hire, Executive Mapping. Candidates in 5 days, hires in 14."
         schemas={[websiteSchema, organizationSchema, homeServiceSchema, homeHowToSchema, homeFaqSchema]}
       />
       <AEOContent paragraph={AEO_PARAGRAPHS.home} label="Kaptas Global overview" />

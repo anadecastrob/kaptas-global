@@ -89,6 +89,9 @@ export default function DirectHire() {
         description="Hire Brazilian professionals directly on your team. Pre-vetted shortlist in 5 days. 18% one-time fee, paid after hire. Replacement warranty included."
         keywords="direct hire brazil, hire developers brazil, one-time recruitment fee brazil, hire brazilian engineers, direct placement brazil, tech talent brazil, 18% hiring fee, pre-vetted developers brazil, replacement guarantee hiring, remote developers brazil"
         canonical="https://kaptasglobal.io/direct-hire"
+        eyebrow="Direct Hire"
+        ogTitle="Direct Hire in Brazil"
+        ogSubtitle="One-time 18% fee, no retainer. 90-180 day replacement guarantee."
         schemas={[
           organizationSchema,
           directHireServiceSchema,
