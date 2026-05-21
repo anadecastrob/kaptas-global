@@ -147,10 +147,7 @@
     { "source": "/thank-you-for-applying/", "destination": "/", "permanent": true },
 
     { "source": "/privacy-policy/", "destination": "/privacy-policy", "permanent": true },
-    { "source": "/terms-of-service/", "destination": "/terms-of-service", "permanent": true },
-
-    { "source": "/calculator", "destination": "/pricing", "permanent": true },
-    { "source": "/calculator/", "destination": "/pricing", "permanent": true }
+    { "source": "/terms-of-service/", "destination": "/terms-of-service", "permanent": true }
   ],
   "headers": [
     {
