@@ -2,4 +2,15 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# Legacy WordPress paths — no longer exist on the new Vite/React build.
+# Telling crawlers not to bother saves crawl budget and stops these from
+# generating "404 / 4xx" noise in Search Console. The 301 redirects in
+# vercel.json still catch real human traffic that hits these URLs.
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
+Disallow: /wp-cron.php
+
 Sitemap: https://kaptasglobal.io/sitemap.xml
