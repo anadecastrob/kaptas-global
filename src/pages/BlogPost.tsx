@@ -75,6 +75,7 @@ export default function BlogPost() {
         ogTitle={plainTitle}
         ogSubtitle={plainExcerpt.slice(0, 140)}
         ogType="article"
+        preloadImage={post.featured_image || undefined}
         schemas={[organizationSchema, articleSchema, breadcrumbSchema]}
       />
 
@@ -110,6 +111,15 @@ export default function BlogPost() {
           <img
             src={post.featured_image}
             alt={post.title}
+            // LCP optimization for blog post heroes — diagnosed 2026-05-22:
+            // this image is the LCP element on every blog post. Without these
+            // attributes the browser deferred the fetch until after CSS/JS
+            // parsing (~520 ms load delay on mobile / Slow 4G). Paired with
+            // the <link rel="preload"> in SEO.tsx (driven by preloadImage),
+            // this brings the image to highest priority from the first byte.
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="w-full rounded-2xl object-cover max-h-[480px] mb-12 border border-white/10"
           />
         )}
