@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { TechMapBackground } from "../TechMapBackground";
 import { staggerContainer, staggerItem } from "./animations";
 
-const words = ["Talent", "Developers", "AI Engineers", "QA Engineers", "for Sales", "for Marketing"];
+const words = ["Talent", "Developers", "Executives", "AI Engineers", "for Sales", "for Marketing", "QA Engineers"];
 
 // Componente da seção Hero (Principal)
 export function Hero() {

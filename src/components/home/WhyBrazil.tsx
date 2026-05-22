@@ -13,7 +13,7 @@ export function WhyBrazil() {
         </h2>
         <div className="relative z-10 max-w-3xl mb-12">
           <p className="text-xl text-gray-300 leading-relaxed">
-            Stop choosing between expensive US talent and heavily async offshore regions. Brazil offers the perfect strategic balance.
+            Stop choosing between expensive local talent and heavily async offshore regions. Brazil offers the perfect strategic balance.
           </p>
         </div>
 
