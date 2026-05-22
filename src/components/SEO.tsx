@@ -79,6 +79,17 @@ export function SEO({
       <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
 
+      {/* hreflang — single locale (en-US). All three variants point at the
+          page's own canonical URL. The "Brazil-targeting" risk for a site
+          *about* Brazil-based hires is real: without per-page hreflang,
+          Google may interpret topical language as a locale signal and
+          deprioritize the page for US queries. Pointing each variant at
+          the same canonical URL is the GSC-recommended self-referencing
+          pattern when the site has one locale. */}
+      <link rel="alternate" hrefLang="en-us" href={canonical} />
+      <link rel="alternate" hrefLang="en" href={canonical} />
+      <link rel="alternate" hrefLang="x-default" href={canonical} />
+
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

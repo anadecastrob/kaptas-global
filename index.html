@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,10 +24,11 @@
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="xh0QXRb1OFYSaFRXzc0mCSc4__gQQiUIJudvUYJW5G4" />
 
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en-us" href="https://kaptasglobal.io/" />
-    <link rel="alternate" hreflang="x-default" href="https://kaptasglobal.io/" />
-    <link rel="alternate" hreflang="en" href="https://kaptasglobal.io/" />
+    <!-- hreflang tags are emitted per-page in src/components/SEO.tsx
+         (pointing to each page's canonical URL, not the root). Do NOT
+         re-add static hreflang here — it would override Helmet's per-page
+         values and ship every page with hreflang="..." href=root, which
+         tells Google the "US version of this page" is the homepage. -->
 
     <!-- LinkedIn Insight Tag (script in head; <noscript> img is in body to satisfy HTML5: <img> is not allowed inside a <noscript> in <head>) -->
     <script type="text/javascript">
