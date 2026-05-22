@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, TrendingDown, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
@@ -56,13 +55,13 @@ export function Hero() {
         
         <div className="flex flex-col items-start gap-5 mb-12">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <Link 
-              to="/pricing" 
+            <a
+              href="#lead-form"
               className="bg-kaptas-green text-kaptas-black px-5 py-2.5 rounded-lg border border-kaptas-green text-sm font-semibold hover:brightness-90 transition-all duration-300 flex items-center gap-2 hover:shadow-[0_0_15px_var(--color-kaptas-green)] w-fit"
             >
               See how hiring in Brazil would work for your team
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
           <div className="flex items-center gap-3 mt-2">
             <div className="flex items-center gap-2 bg-kaptas-green/10 border border-kaptas-green/30 text-kaptas-green px-3 py-1.5 rounded-sm text-sm font-semibold tracking-wide">

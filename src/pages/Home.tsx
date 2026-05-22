@@ -63,7 +63,9 @@ export default function Home() {
         <ServiceNavigation />
         {/* Soft Transition to Light */}
         <div className="h-4 bg-gradient-to-b from-[#111111] to-[#F9FAFB] w-full relative z-10"></div>
-        <LeadGenerationForm />
+        <div id="lead-form" className="w-full flex flex-col scroll-mt-20">
+          <LeadGenerationForm />
+        </div>
         {/* Soft Transition to Dark */}
         <div className="h-4 bg-gradient-to-b from-[#F9FAFB] to-[#111111] w-full relative z-10"></div>
       </div>
