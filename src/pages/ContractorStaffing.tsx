@@ -125,7 +125,7 @@ export default function ContractorStaffing() {
               Outsourcing & Staffing
             </div>
             <h1 className="font-semibold tracking-tight leading-[1.1] mb-8">
-              <span className="block mt-[6px] text-[30px] text-[#6a7282]">Hire Engineers in Brazil</span>
+              <span className="block mt-[6px] text-[30px] text-[#6a7282]">Hire Engineers from Brazil</span>
               <span className="block mt-1 -mr-[500px] whitespace-nowrap text-[52px] text-white">
                 We Source and Run Payroll
               </span>
