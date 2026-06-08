@@ -2,7 +2,9 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { SEO } from "../components/SEO";
+import { AEOContent } from "../components/AEOContent";
 import { organizationSchema, buildBreadcrumbSchema, SITE_URL } from "../data/seoSchemas";
+import { AEO_PARAGRAPHS } from "../data/aeoContent";
 import blogPosts from "../data/blog-posts.json";
 import { formatDateLong } from "../lib/utils";
 
@@ -45,6 +47,14 @@ export default function BlogPost() {
   const plainTitle = stripHtml(post.title);
   const plainExcerpt = stripHtml(post.excerpt).replace(/\[\.\.\.\]$/, "").trim();
 
+  // AEO block for this post: lead with the article's own title + excerpt
+  // (per-post context so the 22 posts don't all ship an identical sr-only
+  // block), then the shared blog/company overview that gives answer engines
+  // the Kaptas entity + contact context the article body lacks.
+  const aeoParagraph =
+    `${plainTitle} — a Kaptas Global blog article.${plainExcerpt ? ` ${plainExcerpt}` : ""} ` +
+    AEO_PARAGRAPHS.blog;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -78,6 +88,8 @@ export default function BlogPost() {
         preloadImage={post.featured_image || undefined}
         schemas={[organizationSchema, articleSchema, breadcrumbSchema]}
       />
+
+      <AEOContent paragraph={aeoParagraph} label="Kaptas Global blog article overview" />
 
       {/* Hero */}
       <motion.section
